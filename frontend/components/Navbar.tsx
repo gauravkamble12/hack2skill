@@ -118,10 +118,10 @@ export default function Navbar() {
             onClick={() => setLang(lang === "en" ? "hi" : "en")}
             aria-label={lang === "en" ? "Switch to Hindi" : "Switch to English"}
             style={{
-              marginLeft: "0.5rem", display: "flex", alignItems: "center", gap: "0.4rem",
+              marginLeft: "0.25rem", display: "flex", alignItems: "center", gap: "0.4rem",
               background: "rgba(255,107,0,0.1)", border: "1px solid rgba(255,107,0,0.25)",
-              color: "#FF8C38", padding: "0.4rem 0.8rem", borderRadius: "8px",
-              fontSize: "0.75rem", fontWeight: 700, cursor: "pointer"
+              color: "#FF8C38", padding: "0.4rem 0.6rem", borderRadius: "8px",
+              fontSize: "0.7rem", fontWeight: 700, cursor: "pointer"
             }}
           >
             🌐 {lang.toUpperCase()}
@@ -129,27 +129,27 @@ export default function Navbar() {
 
           {/* Auth Button */}
           {user ? (
-            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginLeft: "1rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginLeft: "0.5rem" }}>
               <img 
                 src={user.photoURL || ""} 
                 alt={user.displayName || "User"} 
-                style={{ width: "32px", height: "32px", borderRadius: "50%", border: "2px solid #FF6B00" }} 
+                style={{ width: "28px", height: "28px", borderRadius: "50%", border: "2px solid #FF6B00" }} 
               />
               <button 
                 onClick={logout}
                 aria-label="Log out"
-                style={{ background: "none", border: "none", color: "#aab4cc", cursor: "pointer" }}
+                style={{ background: "none", border: "none", color: "#aab4cc", cursor: "pointer", padding: 0 }}
               >
-                <LogOut size={18} />
+                <LogOut size={16} />
               </button>
             </div>
           ) : (
             <button 
               onClick={login}
               className="btn btn-primary"
-              style={{ padding: "0.4rem 1rem", fontSize: "0.8rem", marginLeft: "1rem", borderRadius: "50px" }}
+              style={{ padding: "0.35rem 0.8rem", fontSize: "0.75rem", marginLeft: "0.5rem", borderRadius: "50px" }}
             >
-              <LogIn size={16} /> {t("nav.signin") || "Sign In"}
+              <LogIn size={14} /> {t("nav.signin") || "Sign In"}
             </button>
           )}
         </div>
@@ -186,6 +186,21 @@ export default function Navbar() {
               {l.icon} {t(l.labelKey)}
             </Link>
           ))}
+          <div style={{ marginTop: "1rem", borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "1rem" }}>
+            {user ? (
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 1rem" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                  <img src={user.photoURL || ""} style={{ width: "32px", height: "32px", borderRadius: "50%" }} />
+                  <span style={{ fontSize: "0.9rem", color: "#fff" }}>{user.displayName}</span>
+                </div>
+                <button onClick={logout} className="btn btn-outline" style={{ padding: "0.4rem" }}><LogOut size={18} /></button>
+              </div>
+            ) : (
+              <button onClick={() => { login(); setMobileOpen(false); }} className="btn btn-primary" style={{ width: "100%" }}>
+                <LogIn size={18} /> {t("nav.signin") || "Sign In"}
+              </button>
+            )}
+          </div>
         </div>
       )}
 
