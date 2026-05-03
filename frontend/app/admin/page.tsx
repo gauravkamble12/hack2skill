@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Terminal, ShieldCheck, Database, RefreshCcw, Bell, ExternalLink, Cloud } from "lucide-react";
+import { Terminal, ShieldCheck, Database, RefreshCcw, Bell, Cloud } from "lucide-react";
 
 interface GCPLog {
   timestamp: string;
@@ -14,26 +14,34 @@ export default function AdminPage() {
   const [logs, setLogs] = useState<GCPLog[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchLogs = async () => {
-    try {
-      const apiBase = process.env.NEXT_PUBLIC_API_URL || 
-        (typeof window !== "undefined" && window.location.hostname !== "localhost" 
-          ? "https://backend-zeta-gilt-i7moh0tq0f.vercel.app" 
-          : "http://localhost:5000");
-
-      const res = await fetch(`${apiBase}/api/notifications/logs`);
-      const data = await res.json();
-      setLogs(data);
-      setLoading(false);
-    } catch (e) {
-      console.error("Log fetch failed", e);
-    }
-  };
-
   useEffect(() => {
+    let isMounted = true;
+
+    const fetchLogs = async () => {
+      try {
+        const apiBase = process.env.NEXT_PUBLIC_API_URL || 
+          (typeof window !== "undefined" && window.location.hostname !== "localhost" 
+            ? "https://backend-zeta-gilt-i7moh0tq0f.vercel.app" 
+            : "http://localhost:5000");
+
+        const res = await fetch(`${apiBase}/api/notifications/logs`);
+        const data = await res.json();
+        if (isMounted) {
+          setLogs(data);
+          setLoading(false);
+        }
+      } catch (e) {
+        console.error("Log fetch failed", e);
+        if (isMounted) setLoading(false);
+      }
+    };
+
     fetchLogs();
-    const interval = setInterval(fetchLogs, 10000); // Refresh every 10s
-    return () => clearInterval(interval);
+    const interval = setInterval(fetchLogs, 10000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
   }, []);
 
   return (

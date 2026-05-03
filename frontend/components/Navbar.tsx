@@ -55,8 +55,8 @@ export default function Navbar() {
         display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "0 1.5rem", height: "60px",
       }}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }}>
-          <span style={{ fontSize: "1.4rem" }}>🗳️</span>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }} aria-label="Matdata Mitra Home">
+          <span style={{ fontSize: "1.4rem" }} role="img" aria-label="Ballot box">🗳️</span>
           <span style={{ fontFamily: "Poppins,sans-serif", fontWeight: 800, fontSize: "1rem", background: "linear-gradient(135deg,#FF6B00,#FFD700)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Matdata Mitra
           </span>

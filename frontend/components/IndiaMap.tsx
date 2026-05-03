@@ -31,7 +31,7 @@ export default function IndiaMap({ onSelectState, selectedState }: IndiaMapProps
       border: "1px solid rgba(255,255,255,0.08)",
       overflow: "hidden",
       padding: "1rem",
-    }}>
+    }} role="application" aria-label="Interactive map of Indian states and union territories">
       <div style={{ textAlign: "center", marginBottom: "0.75rem" }}>
         <span style={{ fontSize: "0.7rem", color: "#5a6a8a", textTransform: "uppercase", letterSpacing: "2px" }}>
           Click a State / UT
@@ -40,6 +40,7 @@ export default function IndiaMap({ onSelectState, selectedState }: IndiaMapProps
       
       <ComposableMap
         projection="geoMercator"
+        aria-label="Map of Indian states"
         projectionConfig={{
           scale: 800,
           center: [78.9629, 22.5937] // Center of India

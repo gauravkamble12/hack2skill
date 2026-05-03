@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,37 @@ export const metadata: Metadata = {
     title: "Matdata Mitra | India Election Assistant",
     description: "AI civic education for 96.8 crore Indian voters.",
   },
+  alternates: {
+    canonical: "https://matdatamitra.in",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Matdata Mitra",
+  "description": "AI-powered civic education platform for Indian elections",
+  "url": "https://matdatamitra.in",
+  "applicationCategory": "Education",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Matdata Mitra",
+    "url": "https://matdatamitra.in"
+  },
+  "featureList": [
+    "AI Chatbot for election queries",
+    "Voter registration guide",
+    "Candidate explorer",
+    "Polling booth finder",
+    "Election timeline",
+    "Multi-language support"
+  ]
 };
 
 import { LangProvider } from "@/contexts/LangContext";
@@ -36,14 +68,52 @@ import { AuthProvider } from "@/contexts/AuthContext";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={inter.className}>
-        <AuthProvider>
-          <LangProvider>
-            <Navbar />
-            <main className="main-content">{children}</main>
-            <Footer />
-          </LangProvider>
-        </AuthProvider>
+        <a
+          href="#main-content"
+          style={{
+            position: "absolute",
+            left: "-9999px",
+            top: "auto",
+            width: "1px",
+            height: "1px",
+            overflow: "hidden",
+          }}
+          onFocus={(e) => {
+            e.currentTarget.style.position = "fixed";
+            e.currentTarget.style.left = "1rem";
+            e.currentTarget.style.top = "1rem";
+            e.currentTarget.style.width = "auto";
+            e.currentTarget.style.height = "auto";
+            e.currentTarget.style.padding = "0.75rem 1.5rem";
+            e.currentTarget.style.background = "#FF6B00";
+            e.currentTarget.style.color = "white";
+            e.currentTarget.style.borderRadius = "8px";
+            e.currentTarget.style.zIndex = "9999";
+            e.currentTarget.style.fontWeight = "600";
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.position = "absolute";
+            e.currentTarget.style.left = "-9999px";
+          }}
+        >
+          Skip to main content
+        </a>
+        <ErrorBoundary>
+          <AuthProvider>
+            <LangProvider>
+              <Navbar />
+              <main className="main-content" id="main-content">{children}</main>
+              <Footer />
+            </LangProvider>
+          </AuthProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

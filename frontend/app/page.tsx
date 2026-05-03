@@ -6,7 +6,25 @@ import {
   Bot, BookOpen, Calendar, CheckCircle, Vote, GraduationCap, 
   Search, ShieldCheck, MapPin, Users, Info, ChevronRight, Sparkles 
 } from "lucide-react";
-import IndiaMap from "@/components/IndiaMap";
+import dynamic from "next/dynamic";
+
+const IndiaMap = dynamic(() => import("@/components/IndiaMapWrapper"), {
+  ssr: false,
+  loading: () => (
+    <div style={{ 
+      height: 400, 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      color: "#8896B3",
+      background: "rgba(255,255,255,0.02)",
+      borderRadius: "20px",
+      border: "1px solid rgba(255,255,255,0.08)"
+    }}>
+      Loading Map...
+    </div>
+  ),
+});
 import WhatsAppSubscription from "@/components/WhatsAppSubscription";
 import { useLang } from "@/contexts/LangContext";
 

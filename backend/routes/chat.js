@@ -5,6 +5,7 @@ const rateLimit = require('express-rate-limit');
 const fs = require('fs');
 const path = require('path');
 const { translateText } = require('../services/translateService');
+const { validateRequest, chatValidation } = require('../middleware/validation');
 
 // Strict rate limit for AI endpoint (protect Gemini quota)
 const aiLimiter = rateLimit({
@@ -154,16 +155,8 @@ const SUGGESTIONS = [
 ];
 
 // ─── POST /api/chat ───
-router.post('/', aiLimiter, async (req, res) => {
+router.post('/', aiLimiter, validateRequest(chatValidation), async (req, res) => {
   const { message, language = 'en', context = [] } = req.body;
-
-  if (!message || message.trim().length === 0) {
-    return res.status(400).json({ error: 'Message cannot be empty' });
-  }
-
-  if (message.length > 500) {
-    return res.status(400).json({ error: 'Message too long. Please keep it under 500 characters.' });
-  }
 
   try {
     // 1. Check local cache first (saves API quota!)

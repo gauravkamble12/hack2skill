@@ -5,13 +5,9 @@ import { Send, Bot, HelpCircle, Info, Sparkles } from "lucide-react";
 import SpeechButton from "@/components/SpeechButton";
 import VoiceInput from "@/components/VoiceInput";
 import { useLang } from "@/contexts/LangContext";
+import { endpoints, sanitizeInput } from "@/lib/api";
 
 interface Message { role: "user" | "assistant"; content: string; sources?: string[]; fromCache?: boolean; }
-
-const API = process.env.NEXT_PUBLIC_API_URL || 
-  (typeof window !== "undefined" && window.location.hostname !== "localhost" 
-    ? "https://backend-zeta-gilt-i7moh0tq0f.vercel.app" 
-    : "http://localhost:5000");
 
 function getInitialMessage(t: (key: string) => string): Message {
   return {
@@ -42,14 +38,14 @@ export default function ChatPage() {
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
 
   const sendMessage = async (text?: string) => {
-    const msg = (text || input).trim();
+    const msg = sanitizeInput(text || input, 500);
     if (!msg || loading) return;
     setInput("");
     const userMsg: Message = { role: "user", content: msg };
     setMessages(prev => [...prev, userMsg]);
     setLoading(true);
     try {
-      const res = await fetch(`${API}/api/chat`, {
+      const res = await fetch(endpoints.chat, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
@@ -110,7 +106,12 @@ export default function ChatPage() {
       <div className="tricolor-strip" style={{ marginBottom: "1rem" }} />
 
       {/* Messages */}
-      <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", gap: "1.25rem", paddingRight: "0.25rem" }}>
+      <div 
+        role="log" 
+        aria-live="polite" 
+        aria-relevant="additions"
+        style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", gap: "1.25rem", paddingRight: "0.25rem" }}
+      >
         <AnimatePresence>
           {messages.map((m, i) => (
             <motion.div 
@@ -176,8 +177,15 @@ export default function ChatPage() {
           style={{ padding: "0.75rem 0", display: "flex", gap: "0.5rem", flexWrap: "wrap" }}
         >
           {["sug.1", "sug.2", "sug.3", "sug.4"].map(key => (
-            <button key={key} onClick={() => sendMessage(t(key))} style={{ background: "rgba(255,107,0,0.06)", border: "1px solid rgba(255,107,0,0.2)", borderRadius: "50px", padding: "0.45rem 1rem", fontSize: "0.78rem", color: "#FF8C38", cursor: "pointer", transition: "all 0.2s" }} onMouseOver={e => (e.currentTarget.style.background="rgba(255,107,0,0.15)")} onMouseOut={e => (e.currentTarget.style.background="rgba(255,107,0,0.06)")}>
-              <HelpCircle size={14} style={{ display: "inline", marginRight: "0.4rem", verticalAlign: "middle" }} /> {t(key)}
+            <button 
+              key={key} 
+              onClick={() => sendMessage(t(key))} 
+              aria-label={`${t("common.ask")}: ${t(key)}`}
+              style={{ background: "rgba(255,107,0,0.06)", border: "1px solid rgba(255,107,0,0.2)", borderRadius: "50px", padding: "0.45rem 1rem", fontSize: "0.78rem", color: "#FF8C38", cursor: "pointer", transition: "all 0.2s" }} 
+              onMouseOver={e => (e.currentTarget.style.background="rgba(255,107,0,0.15)")} 
+              onMouseOut={e => (e.currentTarget.style.background="rgba(255,107,0,0.06)")}
+            >
+              <HelpCircle size={14} style={{ display: "inline", marginRight: "0.4rem", verticalAlign: "middle" }} aria-hidden="true" /> {t(key)}
             </button>
           ))}
         </motion.div>
@@ -188,6 +196,8 @@ export default function ChatPage() {
         <div style={{ flex: 1, display: "flex", gap: "0.75rem", background: "var(--bg-card)", padding: "0.5rem", borderRadius: "50px", border: "1px solid var(--border)" }}>
           <input
             className="input"
+            id="chat-input"
+            aria-label={t("chat.placeholder")}
             placeholder={t("chat.placeholder")}
             value={input}
             onChange={e => setInput(e.target.value)}
@@ -195,8 +205,14 @@ export default function ChatPage() {
             style={{ flex: 1, border: "none", background: "transparent", paddingLeft: "1.25rem" }}
             disabled={loading}
           />
-          <button onClick={() => sendMessage()} className="btn btn-primary" disabled={loading || !input.trim()} style={{ borderRadius: "50px", width: "45px", height: "45px", padding: 0, justifyContent: "center" }}>
-            <Send size={18} />
+          <button 
+            onClick={() => sendMessage()} 
+            className="btn btn-primary" 
+            disabled={loading || !input.trim()} 
+            aria-label={t("common.send") || "Send Message"}
+            style={{ borderRadius: "50px", width: "45px", height: "45px", padding: 0, justifyContent: "center" }}
+          >
+            <Send size={18} aria-hidden="true" />
           </button>
         </div>
         

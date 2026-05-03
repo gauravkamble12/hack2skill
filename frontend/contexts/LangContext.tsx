@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 
 export type Lang = "en" | "hi" | "mr" | "gu" | "bn" | "te" | "ta" | "bho";
 
@@ -77,16 +77,13 @@ export function LangProvider({ children }: { children: ReactNode }) {
 
   const t = (key: string) => {
     if (!translations[key]) {
-      console.warn(`Translation key missing: ${key}`);
+      if (process.env.NODE_ENV === "development") {
+        console.warn(`Translation key missing: ${key}`);
+      }
       return key;
     }
     return translations[key][lang] || translations[key]["en"] || key;
   };
-
-  useEffect(() => {
-    console.log("LangProvider initialized. Current lang:", lang);
-    console.log("Test translation (home.hero.title):", t("home.hero.title"));
-  }, [lang]);
 
   return (
     <LangContext.Provider value={{ lang, setLang, t }}>

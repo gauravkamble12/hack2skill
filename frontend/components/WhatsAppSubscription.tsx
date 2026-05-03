@@ -3,6 +3,7 @@ import { useState } from "react";
 import { MessageSquare, CheckCircle2, Loader2, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "@/contexts/LangContext";
+import { endpoints, sanitizePhone, validatePhone } from "@/lib/api";
 
 export default function WhatsAppSubscription() {
   const { t, lang } = useLang();
@@ -11,7 +12,8 @@ export default function WhatsAppSubscription() {
   const [msg, setMsg] = useState("");
 
   const handleSubscribe = async () => {
-    if (!/^\d{10}$/.test(phone)) {
+    const sanitized = sanitizePhone(phone);
+    if (!validatePhone(sanitized)) {
       setMsg(lang === "hi" ? "कृपया 10 अंकों का वैध नंबर दर्ज करें।" : "Please enter a valid 10-digit number.");
       setStatus("error");
       return;
@@ -19,24 +21,18 @@ export default function WhatsAppSubscription() {
 
     setStatus("loading");
     try {
-      const apiBase = process.env.NEXT_PUBLIC_API_URL || 
-        (typeof window !== "undefined" && window.location.hostname !== "localhost" 
-          ? "https://backend-zeta-gilt-i7moh0tq0f.vercel.app" 
-          : "http://localhost:5000");
-
-      const res = await fetch(`${apiBase}/api/notifications/subscribe`, {
+      const res = await fetch(`${endpoints.notifications}/subscribe`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone }),
+        body: JSON.stringify({ phone: sanitized }),
       });
       const data = await res.json();
 
       if (res.ok) {
         setStatus("success");
-        // Trigger WhatsApp Opt-in after a short delay
         setTimeout(() => {
           const waMsg = encodeURIComponent(lang === "hi" ? "मैं मतदाता मित्र चुनाव अलर्ट के लिए सब्सक्राइब करना चाहता हूं! 🗳️" : "I want to subscribe to Matdata Mitra Election Alerts! 🗳️");
-          window.open(`https://wa.me/91${phone}?text=${waMsg}`, "_blank");
+          window.open(`https://wa.me/91${sanitized}?text=${waMsg}`, "_blank");
         }, 1500);
       } else {
         setMsg(data.error || "Failed to subscribe.");
@@ -95,7 +91,8 @@ export default function WhatsAppSubscription() {
                 type="tel"
                 placeholder={t("wa.placeholder")}
                 value={phone}
-                onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
+                onChange={(e) => setPhone(sanitizePhone(e.target.value))}
+                aria-label="Phone number"
                 style={{ flex: 1, background: "transparent", border: "none", outline: "none", color: "white", padding: "0.6rem 0.5rem" }}
               />
               <button 

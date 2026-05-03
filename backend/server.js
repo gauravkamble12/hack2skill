@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const hpp = require('hpp');
 require('dotenv').config();
 
 const chatRoute = require('./routes/chat');
@@ -15,9 +18,12 @@ const { startWatcher } = require('./services/cloudWatcher');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors({ origin: [/localhost:\d+$/, /\.vercel\.app$/] }));
-app.use(express.json());
+// Security & Basic Middleware
+app.use(helmet());
+app.use(xss());
+app.use(hpp());
+app.use(cors({ origin: [/localhost:\d+$/, /\.vercel\.app$/], credentials: true }));
+app.use(express.json({ limit: '10kb' }));
 
 // Global rate limiter
 const globalLimiter = rateLimit({
@@ -39,6 +45,16 @@ app.use('/api/notifications', notificationsRoute);
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Matdata Mitra API is running', timestamp: new Date().toISOString() });
+});
+
+// Error handler
+app.use((err, req, res, next) => {
+  console.error('Unhandled Error:', err.stack || err);
+  res.status(err.status || 500).json({ 
+    error: 'Internal Server Error', 
+    message: err.message,
+    stack: process.env.NODE_ENV === 'development' ? err.stack : undefined 
+  });
 });
 
 if (process.env.NODE_ENV !== 'test') {

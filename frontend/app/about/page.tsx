@@ -1,10 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
-import { Info, Code, Database, ShieldCheck, Heart } from "lucide-react";
-import { useLang } from "@/contexts/LangContext";
+import { ShieldCheck, Heart } from "lucide-react";
 
 export default function AboutPage() {
-  const { t } = useLang();
 
   return (
     <div className="page">
