@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 const rateLimit = require('express-rate-limit');
 const fs = require('fs');
 const path = require('path');
+const { translateText } = require('../services/translateService');
 
 // Strict rate limit for AI endpoint (protect Gemini quota)
 const aiLimiter = rateLimit({
@@ -176,8 +177,11 @@ router.post('/', aiLimiter, async (req, res) => {
     // 2. Search FAQ knowledge base
     const localAnswer = searchLocalFAQ(message);
     if (localAnswer) {
+      // Use Google Translation API to translate the local answer to the user's language
+      const translatedAnswer = await translateText(localAnswer.answer, language);
+      
       const result = {
-        reply: localAnswer.answer,
+        reply: translatedAnswer,
         sources: localAnswer.sources,
         fromCache: true,
         suggestions: SUGGESTIONS.slice(0, 3)
