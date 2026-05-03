@@ -1,5 +1,5 @@
 "use client";
-import { ShieldCheck, Heart } from "lucide-react";
+import { ShieldCheck, Heart, Code } from "lucide-react";
 
 export default function AboutPage() {
 

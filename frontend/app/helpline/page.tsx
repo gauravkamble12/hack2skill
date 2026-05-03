@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Phone, ExternalLink, MessageSquare, Globe, ShieldCheck, AlertTriangle, Info } from "lucide-react";
+import { Phone, ExternalLink, MessageSquare, ShieldCheck, AlertTriangle, Info } from "lucide-react";
 import Link from "next/link";
 
 const helplines = [

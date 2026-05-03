@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { 
   Bot, BookOpen, Calendar, CheckCircle, Vote, GraduationCap, 
   Search, ShieldCheck, MapPin, Users, Info, ChevronRight, Sparkles 

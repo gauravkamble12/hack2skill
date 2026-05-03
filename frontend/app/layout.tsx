@@ -75,34 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={inter.className}>
-        <a
-          href="#main-content"
-          style={{
-            position: "absolute",
-            left: "-9999px",
-            top: "auto",
-            width: "1px",
-            height: "1px",
-            overflow: "hidden",
-          }}
-          onFocus={(e) => {
-            e.currentTarget.style.position = "fixed";
-            e.currentTarget.style.left = "1rem";
-            e.currentTarget.style.top = "1rem";
-            e.currentTarget.style.width = "auto";
-            e.currentTarget.style.height = "auto";
-            e.currentTarget.style.padding = "0.75rem 1.5rem";
-            e.currentTarget.style.background = "#FF6B00";
-            e.currentTarget.style.color = "white";
-            e.currentTarget.style.borderRadius = "8px";
-            e.currentTarget.style.zIndex = "9999";
-            e.currentTarget.style.fontWeight = "600";
-          }}
-          onBlur={(e) => {
-            e.currentTarget.style.position = "absolute";
-            e.currentTarget.style.left = "-9999px";
-          }}
-        >
+        <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
         <ErrorBoundary>

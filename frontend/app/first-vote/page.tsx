@@ -6,7 +6,6 @@ import {
   ChevronRight, ChevronLeft, Sparkles, Trophy 
 } from "lucide-react";
 import Link from "next/link";
-import { useLang } from "@/contexts/LangContext";
 
 const steps = [
   {
@@ -60,7 +59,7 @@ const steps = [
 export default function FirstVotePage() {
   const [current, setCurrent] = useState(0);
   const [pledged, setPledged] = useState(false);
-  const { t } = useLang();
+
 
   const next = () => current < steps.length - 1 && setCurrent(current + 1);
   const prev = () => current > 0 && setCurrent(current - 1);

@@ -1,10 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import electionData from "@/app/data/election_hierarchy.json";
-import { CardSkeleton, ListSkeleton, GridSkeleton } from "@/components/Skeleton";
 
 type ElectionHierarchy = typeof electionData;
 

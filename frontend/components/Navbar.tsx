@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { useLang } from "@/contexts/LangContext";
-import { ChevronDown, Menu, X, LogIn, LogOut, User as UserIcon } from "lucide-react";
+import { ChevronDown, Menu, X, LogIn, LogOut } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import GlobalSearch from "./GlobalSearch";
 

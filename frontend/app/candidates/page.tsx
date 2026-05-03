@@ -1,8 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Search, MapPin, Building, GraduationCap, Scale, Briefcase } from "lucide-react";
-import IframeModal from "@/components/IframeModal";
-
 const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 interface Candidate { id: string; name: string; constituency: string; state: string; party: string; education: string; declared_assets: string; liabilities: string; criminal_cases: number; age: number; affidavit_url: string; summary: string; }
@@ -15,7 +12,6 @@ export default function CandidatesPage() {
   const [search, setSearch] = useState("");
   const [stateFilter, setStateFilter] = useState("All States");
   const [selected, setSelected] = useState<Candidate | null>(null);
-  const [modalUrl, setModalUrl] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(`${API}/api/candidates`)
@@ -59,7 +55,7 @@ export default function CandidatesPage() {
             </div>
           ))}
         </div>
-        <button onClick={() => setModalUrl(selected.affidavit_url)} className="btn btn-outline" style={{ marginTop: "1.25rem", width: "100%", justifyContent: "center" }}>📜 View Full Affidavit on ECI Website →</button>
+        <button onClick={() => window.open(selected.affidavit_url, "_blank")} className="btn btn-outline" style={{ marginTop: "1.25rem", width: "100%", justifyContent: "center" }}>📜 View Full Affidavit on ECI Website →</button>
         <p style={{ fontSize: "0.72rem", color: "#5a6a8a", marginTop: "0.75rem", textAlign: "center" }}>📌 Data sourced from ECI affidavit portal. Neutral, factual presentation only.</p>
       </div>
     </div>
