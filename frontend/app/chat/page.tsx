@@ -8,7 +8,10 @@ import { useLang } from "@/contexts/LangContext";
 
 interface Message { role: "user" | "assistant"; content: string; sources?: string[]; fromCache?: boolean; }
 
-const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const API = process.env.NEXT_PUBLIC_API_URL || 
+  (typeof window !== "undefined" && window.location.hostname !== "localhost" 
+    ? "https://backend-zeta-gilt-i7moh0tq0f.vercel.app" 
+    : "http://localhost:5000");
 
 function getInitialMessage(t: (key: string) => string): Message {
   return {
