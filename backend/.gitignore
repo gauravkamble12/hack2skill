@@ -1,5 +1,6 @@
 # Environment variables - NEVER commit these!
 .env
+serviceAccountKey.json
 
 # Dependencies
 node_modules/

@@ -31,16 +31,19 @@ export const metadata: Metadata = {
 };
 
 import { LangProvider } from "@/contexts/LangContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={inter.className}>
-        <LangProvider>
-          <Navbar />
-          <main className="main-content">{children}</main>
-          <Footer />
-        </LangProvider>
+        <AuthProvider>
+          <LangProvider>
+            <Navbar />
+            <main className="main-content">{children}</main>
+            <Footer />
+          </LangProvider>
+        </AuthProvider>
       </body>
     </html>
   );

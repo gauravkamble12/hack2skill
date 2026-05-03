@@ -12,32 +12,25 @@ An AI-powered civic education platform for Indian elections. Built for the **Goo
 
 ---
 
-## 💡 Approach & Logic
-Our goal was to solve the "Information Overload" problem during elections. We focused on three pillars:
-1.  **AI-First Q&A**: Using **Google Gemini 2.0 Flash** for natural language understanding of complex election laws.
-2.  **Google Calendar Integration**: Direct "Remind Me" deep-linking to sync election dates with users' personal calendars.
-3.  **Google Maps Navigation**: Real-time walking directions to polling stations via the Google Maps Direction API.
-4.  **Smart Caching**: An in-memory cache layer in the backend matches common queries (FAQs) instantly, reducing AI latency and API costs.
-
-### System Logic:
--   **Chat Flow**: User Query → Backend Controller → Local FAQ Cache Check → (If Miss) Gemini API Call → Source Verification → Secure Response.
--   **Security**: Neutrality is enforced via System Instructions to ensure the AI never takes a political side.
+## 💡 Tech Stack & Innovations
+-   **AI Core**: **Google Gemini 2.0 Flash** for natural language understanding of election laws.
+-   **Auth**: **Firebase Authentication** with Google Sign-In for personalized civic profiles.
+-   **Cloud DB**: **Google Cloud Firestore** for real-time notification logs and subscriber management.
+-   **Maps**: Premium **Google Maps API** integration with custom dark-themed styling for booth navigation.
+-   **Testing**: Comprehensive **Jest** & **Supertest** suite for both Backend APIs and Frontend components.
+-   **Aesthetics**: Premium Dark-Glassmorphism UI using **Next.js 16**, **Framer Motion**, and **Lucide Icons**.
 
 ---
 
-## 🛠️ How it Works
--   **Backend (Node.js/Express)**: Handles AI logic, real-time data fetching, and security filtering.
--   **Frontend (Next.js 16)**: A premium, dark-glassmorphism UI built with Framer Motion for smooth interactions.
--   **Data Layers**: 
-    -   `elections.json`: Historical and upcoming election schedules.
-    -   `candidates.json`: Detailed profiles of key candidates with asset/affidavit summaries.
-    -   `faqs.json`: Pre-verified ECI answers for instant delivery.
-
----
-
-## 📝 Assumptions Made
-1.  **Simulated Real-time Data**: Since live ECI APIs are restricted to official partners, we use high-fidelity simulated JSON data updated with 2024 results.
-2.  **Neutrality**: We assume the primary goal is education, not political debate; therefore, the bot is restricted from expressing opinions on political parties.
+## 🛠️ System Architecture
+-   **Backend (Node.js/Express)**: 
+    -   Secure AI routing with `express-rate-limit`.
+    -   **Firebase Admin SDK** integration for server-side cloud operations.
+    -   **Real-time News Watcher**: A background service that simulates election alerts and dispatches cloud-synced payloads.
+-   **Frontend (Next.js 16)**:
+    -   **AuthContext**: Centralized state management for Firebase users.
+    -   **Responsive Map**: Dynamic booth finder using `@react-google-maps/api`.
+    -   **Accessibility**: Full ARIA-compliant navigation and interaction models.
 
 ---
 
@@ -47,6 +40,7 @@ Our goal was to solve the "Information Overload" problem during elections. We fo
 ```bash
 cd backend
 npm install
+npm test # Run the API test suite
 npm run dev
 ```
 
@@ -54,6 +48,7 @@ npm run dev
 ```bash
 cd frontend
 npm install
+npm test # Run the component test suite
 npm run dev
 ```
 
@@ -62,9 +57,9 @@ npm run dev
 ## 📦 Key Features
 - 🤖 **Matdata Mitra AI Chat** — Smart Q&A using Google Gemini 2.0.
 - 👨‍👩‍👧‍👦 **Mera Pehla Vote** — Onboarding wizard for first-time voters.
-- 📍 **Booth Finder** — Interactive Map integration for polling station lookup.
+- 📍 **Premium Booth Finder** — Custom Google Maps integration.
 - 🗳️ **Mock EVM Simulator** — Practice voting with VVPAT confirmation.
-- 📞 **Helpline Directory** — One-tap access to National/State helplines.
+- 🛡️ **Admin Monitor** — Real-time cloud logs for system health.
 
 ---
 © 2026 Matdata Mitra • Dedicated to Indian Democracy.

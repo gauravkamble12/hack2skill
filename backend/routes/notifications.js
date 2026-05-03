@@ -1,25 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
+const { db } = require('../services/firebaseAdmin');
 
-const SUBSCRIBERS_PATH = path.join(__dirname, '../data/subscribers.json');
-const LOGS_PATH = path.join(__dirname, '../data/gcp_logs.json');
-
-router.get('/logs', (req, res) => {
+// GET /api/notifications/logs
+router.get('/logs', async (req, res) => {
   try {
-    if (fs.existsSync(LOGS_PATH)) {
-      const logs = JSON.parse(fs.readFileSync(LOGS_PATH, 'utf8'));
-      res.status(200).json(logs);
-    } else {
-      res.status(200).json([]);
-    }
+    const logsSnapshot = await db.collection('logs')
+      .orderBy('timestamp', 'desc')
+      .limit(50)
+      .get();
+    
+    const logs = [];
+    logsSnapshot.forEach(doc => logs.push(doc.data()));
+    res.status(200).json(logs);
   } catch (error) {
+    console.error('Fetch logs error:', error);
     res.status(500).json({ error: 'Failed to fetch logs' });
   }
 });
 
-router.post('/subscribe', (req, res) => {
+// POST /api/notifications/subscribe
+router.post('/subscribe', async (req, res) => {
   const { phone } = req.body;
 
   if (!phone || !/^\d{10}$/.test(phone)) {
@@ -27,17 +28,18 @@ router.post('/subscribe', (req, res) => {
   }
 
   try {
-    let subscribers = [];
-    if (fs.existsSync(SUBSCRIBERS_PATH)) {
-      subscribers = JSON.parse(fs.readFileSync(SUBSCRIBERS_PATH, 'utf8'));
-    }
+    const subRef = db.collection('subscribers').doc(phone);
+    const doc = await subRef.get();
 
-    if (subscribers.includes(phone)) {
+    if (doc.exists) {
       return res.status(200).json({ message: 'You are already subscribed!', alreadySubscribed: true });
     }
 
-    subscribers.push(phone);
-    fs.writeFileSync(SUBSCRIBERS_PATH, JSON.stringify(subscribers, null, 2));
+    await subRef.set({
+      phone,
+      subscribedAt: new Date().toISOString(),
+      active: true
+    });
 
     res.status(200).json({ message: 'Successfully subscribed to WhatsApp alerts!' });
   } catch (error) {

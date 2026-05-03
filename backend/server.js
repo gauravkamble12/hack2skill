@@ -41,7 +41,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Matdata Mitra API is running', timestamp: new Date().toISOString() });
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Matdata Mitra backend running at http://localhost:${PORT}`);
-  startWatcher();
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`✅ Matdata Mitra backend running at http://localhost:${PORT}`);
+    startWatcher();
+  });
+}
+
+module.exports = app;

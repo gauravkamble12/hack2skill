@@ -3,7 +3,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { useLang } from "@/contexts/LangContext";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, LogIn, LogOut, User as UserIcon } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 import GlobalSearch from "./GlobalSearch";
 
 const mainLinks = [
@@ -32,6 +33,7 @@ export default function Navbar() {
   const [exploreOpen, setExploreOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { lang, setLang, t } = useLang();
+  const { user, login, logout } = useAuth();
   const exploreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -76,22 +78,31 @@ export default function Navbar() {
           ))}
           
           <div ref={exploreRef} style={{ position: "relative" }}>
-            <button onClick={() => setExploreOpen(!exploreOpen)} style={{
-              background: exploreOpen ? "rgba(255,107,0,0.15)" : "transparent",
-              border: "none", color: exploreOpen ? "#FF6B00" : "#aab4cc",
-              fontSize: "0.85rem", fontWeight: 500, cursor: "pointer",
-              padding: "0.5rem 0.75rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.3rem",
-            }}>
+            <button 
+              onClick={() => setExploreOpen(!exploreOpen)} 
+              aria-expanded={exploreOpen}
+              aria-haspopup="true"
+              aria-label={t("common.explore")}
+              style={{
+                background: exploreOpen ? "rgba(255,107,0,0.15)" : "transparent",
+                border: "none", color: exploreOpen ? "#FF6B00" : "#aab4cc",
+                fontSize: "0.85rem", fontWeight: 500, cursor: "pointer",
+                padding: "0.5rem 0.75rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.3rem",
+              }}
+            >
               {t("common.explore")} <ChevronDown size={14} style={{ transform: exploreOpen ? "rotate(180deg)" : "rotate(0)", transition: "0.2s" }} />
             </button>
             {exploreOpen && (
-              <div style={{
-                position: "absolute", top: "48px", right: 0, background: "var(--bg-card)",
-                border: "1px solid var(--border)", borderRadius: "12px", padding: "0.5rem",
-                minWidth: "200px", boxShadow: "0 10px 40px rgba(0,0,0,0.6)", zIndex: 1001
-              }}>
+              <div 
+                role="menu"
+                style={{
+                  position: "absolute", top: "48px", right: 0, background: "var(--bg-card)",
+                  border: "1px solid var(--border)", borderRadius: "12px", padding: "0.5rem",
+                  minWidth: "200px", boxShadow: "0 10px 40px rgba(0,0,0,0.6)", zIndex: 1001
+                }}
+              >
                 {moreLinks.map(l => (
-                  <Link key={l.href} href={l.href} onClick={() => setExploreOpen(false)} style={{
+                  <Link key={l.href} href={l.href} role="menuitem" onClick={() => setExploreOpen(false)} style={{
                     display: "flex", alignItems: "center", gap: "0.6rem", padding: "0.7rem 1rem",
                     color: pathname === l.href ? "#FF6B00" : "#e2e8f0",
                     textDecoration: "none", fontSize: "0.85rem", borderRadius: "8px", transition: "0.2s"
@@ -105,6 +116,7 @@ export default function Navbar() {
 
           <button 
             onClick={() => setLang(lang === "en" ? "hi" : "en")}
+            aria-label={lang === "en" ? "Switch to Hindi" : "Switch to English"}
             style={{
               marginLeft: "0.5rem", display: "flex", alignItems: "center", gap: "0.4rem",
               background: "rgba(255,107,0,0.1)", border: "1px solid rgba(255,107,0,0.25)",
@@ -114,11 +126,43 @@ export default function Navbar() {
           >
             🌐 {lang.toUpperCase()}
           </button>
+
+          {/* Auth Button */}
+          {user ? (
+            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginLeft: "1rem" }}>
+              <img 
+                src={user.photoURL || ""} 
+                alt={user.displayName || "User"} 
+                style={{ width: "32px", height: "32px", borderRadius: "50%", border: "2px solid #FF6B00" }} 
+              />
+              <button 
+                onClick={logout}
+                aria-label="Log out"
+                style={{ background: "none", border: "none", color: "#aab4cc", cursor: "pointer" }}
+              >
+                <LogOut size={18} />
+              </button>
+            </div>
+          ) : (
+            <button 
+              onClick={login}
+              className="btn btn-primary"
+              style={{ padding: "0.4rem 1rem", fontSize: "0.8rem", marginLeft: "1rem", borderRadius: "50px" }}
+            >
+              <LogIn size={16} /> {t("nav.signin") || "Sign In"}
+            </button>
+          )}
         </div>
 
-        <button onClick={() => setMobileOpen(!mobileOpen)} className="hamburger-btn" style={{
-          display: "none", background: "none", border: "none", color: "#fff", fontSize: "1.5rem", cursor: "pointer"
-        }}>
+        <button 
+          onClick={() => setMobileOpen(!mobileOpen)} 
+          className="hamburger-btn" 
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          style={{
+            display: "none", background: "none", border: "none", color: "#fff", fontSize: "1.5rem", cursor: "pointer"
+          }}
+        >
           {mobileOpen ? <X /> : <Menu />}
         </button>
       </nav>

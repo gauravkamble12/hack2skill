@@ -1,8 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-
-const LOGS_PATH = path.join(__dirname, '../data/gcp_logs.json');
-const SUBSCRIBERS_PATH = path.join(__dirname, '../data/subscribers.json');
+const { db } = require('./firebaseAdmin');
 
 // Mock election news database
 const MOCK_NEWS_SOURCE = [
@@ -12,46 +8,43 @@ const MOCK_NEWS_SOURCE = [
   "Check your name in the final electoral roll published today.",
 ];
 
-function logToGCP(message, type = 'INFO') {
+async function logToGCP(message, type = 'INFO') {
   try {
-    let logs = [];
-    if (fs.existsSync(LOGS_PATH)) {
-      logs = JSON.parse(fs.readFileSync(LOGS_PATH, 'utf8'));
-    }
     const newLog = {
       timestamp: new Date().toISOString(),
       message,
       type,
       function_id: 'election-news-watcher-v1'
     };
-    logs.unshift(newLog); // Newest first
-    // Keep only last 50 logs
-    fs.writeFileSync(LOGS_PATH, JSON.stringify(logs.slice(0, 50), null, 2));
+    
+    await db.collection('logs').add(newLog);
   } catch (e) {
     console.error("Log failed", e);
   }
 }
 
 function startWatcher() {
-  console.log("☁️ Google Cloud Function Simulator: News Watcher started.");
+  console.log("☁️ Real GCP Cloud Function Watcher: Initializing...");
   logToGCP("Function 'election-news-watcher' initialized.", "SYSTEM");
 
   // Every 45 seconds, simulate a "News Detection" event
-  setInterval(() => {
+  setInterval(async () => {
     const news = MOCK_NEWS_SOURCE[Math.floor(Math.random() * MOCK_NEWS_SOURCE.length)];
     logToGCP(`GCP Scheduler triggered. Checking ECI RSS feeds...`, "TRIGGER");
     
-    setTimeout(() => {
+    setTimeout(async () => {
       logToGCP(`New Alert Detected: "${news}"`, "ALERT");
       
-      // Simulate checking subscribers
-      if (fs.existsSync(SUBSCRIBERS_PATH)) {
-        const subs = JSON.parse(fs.readFileSync(SUBSCRIBERS_PATH, 'utf8'));
-        if (subs.length > 0) {
-          logToGCP(`Dispatching WhatsApp payloads to ${subs.length} subscribers.`, "SUCCESS");
+      try {
+        const subsSnapshot = await db.collection('subscribers').where('active', '==', true).get();
+        if (!subsSnapshot.empty) {
+          logToGCP(`Dispatching WhatsApp payloads to ${subsSnapshot.size} subscribers.`, "SUCCESS");
+          // Real WhatsApp integration logic will go here once Twilio is ready
         } else {
-          logToGCP(`No subscribers found. Notification skipped.`, "SKIPPED");
+          logToGCP(`No active subscribers found. Notification skipped.`, "SKIPPED");
         }
+      } catch (err) {
+        console.error("Subscriber check failed", err);
       }
     }, 2000);
   }, 45000);

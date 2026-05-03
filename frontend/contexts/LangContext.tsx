@@ -62,6 +62,8 @@ const translations: any = {
   "common.next": { en: "Next →", hi: "आगे →" },
   "common.close": { en: "Close", hi: "बंद करें" },
   "common.search": { en: "Search", hi: "खोजें" },
+  "nav.signin": { en: "Sign In", hi: "साइन इन" },
+  "nav.signout": { en: "Sign Out", hi: "साइन आउट" },
 };
 
 const LangContext = createContext<LangContextType>({
