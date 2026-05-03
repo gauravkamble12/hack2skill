@@ -127,6 +127,9 @@ export default function Navbar() {
           background: "rgba(10,14,26,0.98)", borderBottom: "1px solid rgba(255,255,255,0.06)",
           padding: "1rem", display: "flex", flexDirection: "column", gap: "0.5rem"
         }}>
+          <div style={{ marginBottom: "0.5rem" }} onClick={() => setMobileOpen(false)}>
+            <GlobalSearch />
+          </div>
           {[...mainLinks, ...moreLinks].map(l => (
             <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)} style={{
               padding: "0.8rem 1rem", borderRadius: "10px", fontSize: "0.9rem",

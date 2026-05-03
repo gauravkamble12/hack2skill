@@ -1,7 +1,8 @@
 "use client";
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef, useMemo, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { X } from "lucide-react";
+import { useLang } from "@/contexts/LangContext";
 
 interface SearchResult {
   title: string;
@@ -29,6 +30,25 @@ export default function GlobalSearch() {
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  const { t } = useLang();
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+        e.preventDefault();
+        setIsOpen(prev => !prev);
+      }
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => inputRef.current?.focus(), 10);
+    }
+  }, [isOpen]);
 
   const results = useMemo(() => {
     if (!query) return [];
@@ -56,8 +76,8 @@ export default function GlobalSearch() {
           fontSize: "0.85rem", cursor: "pointer", minWidth: "180px"
         }}
       >
-        🔍 <span style={{ flex: 1, textAlign: "left" }}>Search...</span>
-        <kbd style={{ fontSize: "0.7rem", background: "rgba(255,255,255,0.1)", padding: "0.1rem 0.4rem", borderRadius: "4px" }}>Ctrl+K</kbd>
+        🔍 <span style={{ flex: 1, textAlign: "left" }}>{t("common.search")}...</span>
+        <kbd style={{ fontSize: "0.7rem", background: "rgba(255,255,255,0.1)", padding: "0.1rem 0.4rem", borderRadius: "4px" }}>⌘K</kbd>
       </button>
 
       {isOpen && (
