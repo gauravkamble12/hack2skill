@@ -15,8 +15,9 @@ An AI-powered civic education platform for Indian elections. Built for the **Goo
 ## 💡 Approach & Logic
 Our goal was to solve the "Information Overload" problem during elections. We focused on three pillars:
 1.  **AI-First Q&A**: Using **Google Gemini 2.0 Flash** for natural language understanding of complex election laws.
-2.  **Smart Caching**: An in-memory cache layer in the backend matches common queries (FAQs) instantly, reducing AI latency and API costs.
-3.  **Gamified Learning**: Interactive tools like the "Mock EVM Simulator" and "Mera Pehla Vote" onboarding wizard to make civic education engaging.
+2.  **Google Calendar Integration**: Direct "Remind Me" deep-linking to sync election dates with users' personal calendars.
+3.  **Google Maps Navigation**: Real-time walking directions to polling stations via the Google Maps Direction API.
+4.  **Smart Caching**: An in-memory cache layer in the backend matches common queries (FAQs) instantly, reducing AI latency and API costs.
 
 ### System Logic:
 -   **Chat Flow**: User Query → Backend Controller → Local FAQ Cache Check → (If Miss) Gemini API Call → Source Verification → Secure Response.

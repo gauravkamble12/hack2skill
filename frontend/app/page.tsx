@@ -7,6 +7,7 @@ import {
   Search, ShieldCheck, MapPin, Users, Info, ChevronRight, Sparkles 
 } from "lucide-react";
 import IndiaMap from "@/components/IndiaMap";
+import WhatsAppSubscription from "@/components/WhatsAppSubscription";
 import { useLang } from "@/contexts/LangContext";
 
 const features = [
@@ -205,6 +206,17 @@ export default function HomePage() {
         <CountdownTimer />
         <Link href="/timeline" className="btn btn-primary" style={{ whiteSpace: "nowrap" }}>Track All Dates <ChevronRight size={18} /></Link>
       </motion.section>
+
+      {/* ─── WHATSAPP SUBSCRIPTION ─── */}
+      <section id="whatsapp" style={{ marginBottom: "4rem" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <WhatsAppSubscription />
+        </motion.div>
+      </section>
 
       {/* ─── FEATURES ─── */}
       <section style={{ marginBottom: "4rem" }}>

@@ -9,6 +9,8 @@ const candidatesRoute = require('./routes/candidates');
 const eligibilityRoute = require('./routes/eligibility');
 const externalDataRoute = require('./routes/externalData');
 const liveElectionRoute = require('./routes/liveElection');
+const notificationsRoute = require('./routes/notifications');
+const { startWatcher } = require('./services/cloudWatcher');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -32,6 +34,7 @@ app.use('/api/candidates', candidatesRoute);
 app.use('/api/eligibility', eligibilityRoute);
 app.use('/api/external', externalDataRoute);
 app.use('/api/live', liveElectionRoute);
+app.use('/api/notifications', notificationsRoute);
 
 // Health check
 app.get('/api/health', (req, res) => {
@@ -40,4 +43,5 @@ app.get('/api/health', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`✅ Matdata Mitra backend running at http://localhost:${PORT}`);
+  startWatcher();
 });

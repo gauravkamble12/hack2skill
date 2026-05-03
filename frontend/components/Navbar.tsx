@@ -22,6 +22,8 @@ const moreLinks = [
   { href: "/candidates", labelKey: "nav.candidates", icon: "🧾" },
   { href: "/first-vote", labelKey: "nav.firstVote", icon: "🇮🇳" },
   { href: "/helpline", labelKey: "nav.helpline", icon: "📞" },
+  { href: "/#whatsapp", labelKey: "nav.whatsapp", icon: "💬" },
+  { href: "/admin", labelKey: "nav.admin", icon: "🛡️" },
   { href: "/about", labelKey: "nav.about", icon: "ℹ️" },
 ];
 
