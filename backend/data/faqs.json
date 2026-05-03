@@ -1,0 +1,94 @@
+{
+  "faqs": [
+    {
+      "keywords": ["register", "voter registration", "how to register", "sign up", "enroll", "form 6", "voter id", "how to", "how do i", "how can i", "want to register"],
+      "question": "How do I register as a voter?",
+      "answer": "To register as a voter in India:\n\n1. **Visit** the National Voters' Service Portal at voters.eci.gov.in\n2. **Fill Form 6** (for new voter registration)\n3. **Upload documents**: Age proof (Aadhaar/birth certificate), Address proof (Aadhaar/utility bill), Passport-size photo\n4. **Submit** online or at your local BLO (Booth Level Officer) office\n5. **Track** your application status on the portal\n\nYou can also register using the **Voter Helpline App** (available on Play Store/App Store) or by calling **1950** (Voter Helpline).\n\n📋 **Eligibility**: You must be 18+ years old and an Indian citizen.",
+      "sources": ["ECI Voter Registration Portal - voters.eci.gov.in", "Representation of the People Act, 1951"],
+      "tags": ["registration", "form6", "voter", "enroll"],
+      "lang": "en"
+    },
+    {
+      "keywords": ["how to vote", "voting process", "polling booth", "voting day", "cast vote", "steps to vote", "where to vote", "vote process"],
+      "question": "How do I vote on Election Day?",
+      "answer": "Here's how to vote on Election Day:\n\n1. **Find your polling booth** at voters.eci.gov.in or the Voter Helpline App\n2. **Carry your Voter ID** (EPIC card) or any of these: Aadhaar, Passport, Driving License, PAN Card, Job Card (MNREGA), Smart Card\n3. **Go to the polling booth** during voting hours (usually 7 AM – 6 PM)\n4. **Get your name verified** and finger marked with indelible ink\n5. **Enter the voting compartment** and press the button next to your chosen candidate on the EVM (Electronic Voting Machine)\n6. **VVPAT slip** will appear briefly to confirm your vote\n\n⚠️ Your vote is **completely secret**. No one can know whom you voted for.",
+      "sources": ["ECI Voters' Guide", "Conduct of Elections Rules, 1961"],
+      "tags": ["voting", "election-day", "EVM", "booth"],
+      "lang": "en"
+    },
+    {
+      "keywords": ["documents", "what documents", "id proof", "identity", "voter id card", "which id", "what id", "id list", "documents required"],
+      "question": "What documents do I need to vote?",
+      "answer": "You need to carry **any one** of these 12 approved photo identity documents to vote:\n\n1. Voter ID Card (EPIC)\n2. Aadhaar Card\n3. Passport\n4. Driving License\n5. PAN Card\n6. Smart Card (MNREGA Job Card)\n7. Bank / Post Office Passbook with photo\n8. Health Insurance Smart Card (RSBY)\n9. Pension Document with photo\n10. NPR Smart Card\n11. Official photo ID issued by Government\n12. Disability ID card\n\n✅ Even without a Voter ID card, you can vote using any of the above documents if your name is in the voter list.",
+      "sources": ["ECI Guidelines on Alternative Documents for Voting"],
+      "tags": ["documents", "id", "voter-id", "aadhaar"],
+      "lang": "en"
+    },
+    {
+      "keywords": ["become candidate", "contest election", "stand for election", "nomination process"],
+      "question": "How do I become a candidate/contest an election?",
+      "answer": "To become a candidate in Indian elections:\n\n**Eligibility Requirements:**\n- Must be an Indian citizen\n- Age: 25+ years for Lok Sabha/Assembly, 30+ years for Rajya Sabha\n- Must be a registered voter\n- Must not hold an office of profit under government\n- Must not be convicted of certain crimes\n\n**Process:**\n1. **File Nomination**: Submit Form 2B (nomination paper) at the Returning Officer's office during the nomination window\n2. **Pay Security Deposit**: ₹25,000 for Lok Sabha (₹12,500 for SC/ST), ₹10,000 for Assembly\n3. **Submit Affidavit**: Declare assets, liabilities, criminal cases (if any), and educational qualifications\n4. **Nomination Scrutiny**: RO verifies eligibility\n5. **Withdraw or Campaign**: You have a window to withdraw candidature\n6. **Campaign**: Follow Model Code of Conduct\n\n📋 Source: Representation of the People Act, 1951",
+      "sources": ["Representation of the People Act, 1951, Section 33", "ECI Candidature Guidelines"],
+      "tags": ["candidate", "nomination", "contest", "election"],
+      "lang": "en"
+    },
+    {
+      "keywords": ["what is lok sabha", "lower house of parliament", "lok sabha facts"],
+      "question": "What is Lok Sabha?",
+      "answer": "**Lok Sabha** (House of the People) is the lower house of India's Parliament.\n\n🏛️ **Key Facts:**\n- Has **543 elected seats** (+ 2 nominated seats for Anglo-Indians, now abolished)\n- Members are elected by **direct vote** of citizens\n- Members are called **Members of Parliament (MPs)**\n- **Term**: 5 years (unless dissolved earlier)\n- Meets in the **Central Hall of Parliament**, New Delhi\n\n**Powers of Lok Sabha:**\n- Passes laws and the national budget\n- Questions the government (Question Hour)\n- Can pass a No-Confidence Motion to remove the government\n\n**Eligibility to vote for Lok Sabha**: Any Indian citizen aged 18+\n\nThe **Speaker** presides over the Lok Sabha sessions.",
+      "sources": ["Constitution of India, Articles 81-83", "Lok Sabha Secretariat"],
+      "tags": ["lok-sabha", "parliament", "lower-house", "learn"],
+      "lang": "en"
+    },
+    {
+      "keywords": ["rajya sabha", "upper house", "what is rajya sabha"],
+      "question": "What is Rajya Sabha?",
+      "answer": "**Rajya Sabha** (Council of States) is the upper house of India's Parliament.\n\n🏛️ **Key Facts:**\n- Maximum **250 seats** (238 elected + 12 nominated by President)\n- Currently has **245 members**\n- Members are **NOT elected directly** by citizens — they are elected by elected members of State Legislative Assemblies\n- **Term**: 6 years per member\n- Rajya Sabha **never dissolves** — 1/3rd of members retire every 2 years\n\n**Powers:**\n- Reviews and suggests changes to bills\n- Represents state interests at the national level\n- Can initiate bills (except Money Bills)\n\nThe **Vice President of India** is the ex-officio Chairman of Rajya Sabha.",
+      "sources": ["Constitution of India, Articles 80-84"],
+      "tags": ["rajya-sabha", "upper-house", "parliament", "learn"],
+      "lang": "en"
+    },
+    {
+      "keywords": ["eci", "election commission", "what is eci", "election commission of india"],
+      "question": "What is the Election Commission of India?",
+      "answer": "The **Election Commission of India (ECI)** is an autonomous constitutional authority responsible for administering all elections in India.\n\n⚖️ **Key Facts:**\n- Established: **25 January 1950** (celebrated as National Voters' Day)\n- Constitutional Authority under **Article 324** of the Constitution\n- Headed by the **Chief Election Commissioner (CEC)**\n- Currently has 3 members: 1 CEC + 2 Election Commissioners\n\n**Responsibilities:**\n- Conducting free and fair elections\n- Maintaining electoral rolls (voter lists)\n- Enforcing the Model Code of Conduct\n- Recognizing political parties and symbols\n- Monitoring election expenditure\n\n🌐 Website: **eci.gov.in**\n📞 Voter Helpline: **1950**",
+      "sources": ["Constitution of India, Article 324", "ECI Official Website - eci.gov.in"],
+      "tags": ["eci", "election-commission", "learn"],
+      "lang": "en"
+    },
+    {
+      "keywords": ["voter eligibility", "who can vote", "voting age in india"],
+      "question": "Who is eligible to vote in India?",
+      "answer": "**Voter Eligibility in India:**\n\n✅ You CAN vote if:\n- You are an **Indian citizen**\n- You are **18 years or older** on the qualifying date (1st January of the election year)\n- Your name is in the **electoral roll** of your constituency\n- You are of **sound mind** (not declared unsound by a court)\n\n❌ You CANNOT vote if:\n- You are a **non-citizen**\n- You are **under 18**\n- You are **disqualified** under RPA 1951 (e.g., convicted of certain crimes)\n- You are serving a **prison sentence** for a serious crime\n- You have been **debarred** by ECI\n\n📝 **How to check**: Search your name at voters.eci.gov.in",
+      "sources": ["Representation of the People Act, 1951, Section 16", "Constitution of India, Article 326"],
+      "tags": ["eligibility", "voter", "age", "citizen"],
+      "lang": "en"
+    },
+    {
+      "keywords": ["evm", "electronic voting machine", "how evm works", "voting machine"],
+      "question": "How does the Electronic Voting Machine (EVM) work?",
+      "answer": "The **Electronic Voting Machine (EVM)** is used for all elections in India since 2004.\n\n🖥️ **How It Works:**\n1. EVM has **two units**: Ballot Unit (at the voter booth) + Control Unit (with the Presiding Officer)\n2. The ballot unit shows **candidate names and party symbols** with buttons\n3. Voter presses the **blue button** next to their chosen candidate\n4. A **beep** sound confirms the vote\n5. The **VVPAT** (Voter Verifiable Paper Audit Trail) machine prints a slip showing the candidate you voted for — visible for 7 seconds, then drops into a sealed box\n\n🔒 **Security Features:**\n- Cannot be connected to the internet\n- Runs on a one-time programmable chip\n- Automatically locked after voting ends\n- Results can only be retrieved with special keys\n\n✅ Your vote is **100% secret**",
+      "sources": ["ECI EVM Guidelines", "EVM Technical Handbook - ECI"],
+      "tags": ["evm", "voting-machine", "VVPAT", "how-to"],
+      "lang": "en"
+    },
+    {
+      "keywords": ["model code of conduct", "MCC", "election rules", "campaign rules"],
+      "question": "What is the Model Code of Conduct?",
+      "answer": "The **Model Code of Conduct (MCC)** is a set of guidelines issued by the ECI that all political parties and candidates must follow during elections.\n\n📋 **Key Rules:**\n- No party can use government machinery/resources for campaigning\n- No new government schemes can be announced after MCC kicks in\n- No inflammatory speeches targeting religion, caste, or community\n- No distribution of liquor, cash, or gifts to voters\n- Rallies need prior police permission\n- Election campaign must stop **48 hours before** polling (Silence Period)\n\n⏰ **When does it apply?**\nFrom the date of announcement of election schedule until results are declared.\n\n🚨 **Violations** can be reported to ECI at **1950** or eci.gov.in",
+      "sources": ["ECI Model Code of Conduct Guidelines"],
+      "tags": ["MCC", "campaign", "rules", "conduct"],
+      "lang": "en"
+    }
+  ],
+  "hindi_faqs": [
+    {
+      "keywords": ["मतदाता पंजीकरण", "वोटर रजिस्ट्रेशन", "पंजीकरण कैसे करें"],
+      "question": "मतदाता के रूप में पंजीकरण कैसे करें?",
+      "answer": "भारत में मतदाता के रूप में पंजीकरण करने के लिए:\n\n1. **जाएं** राष्ट्रीय मतदाता सेवा पोर्टल पर: voters.eci.gov.in\n2. **फॉर्म 6 भरें** (नए मतदाता पंजीकरण के लिए)\n3. **दस्तावेज अपलोड करें**: आयु प्रमाण (आधार/जन्म प्रमाण पत्र), पता प्रमाण, पासपोर्ट साइज फोटो\n4. **ऑनलाइन सबमिट करें** या अपने स्थानीय BLO कार्यालय में जमा करें\n5. **आवेदन की स्थिति** पोर्टल पर ट्रैक करें\n\n📞 **मतदाता हेल्पलाइन**: 1950\n\n✅ **पात्रता**: आपकी उम्र 18+ वर्ष होनी चाहिए और आप भारतीय नागरिक होने चाहिए।",
+      "sources": ["ECI मतदाता पंजीकरण पोर्टल - voters.eci.gov.in"],
+      "tags": ["registration", "hindi"],
+      "lang": "hi"
+    }
+  ]
+}

@@ -1,0 +1,627 @@
+{
+  "lok_sabha": {
+    "title": "Lok Sabha (House of the People)",
+    "level": "National",
+    "description": "Lower house of Parliament. 543 directly elected seats. Elections every 5 years.",
+    "total_seats": 543,
+    "tenure_years": 5,
+    "last_election": {
+      "year": 2024,
+      "phase": 7,
+      "dates": ["April 19", "April 26", "May 7", "May 13", "May 20", "May 25", "June 1"],
+      "result_date": "June 4, 2024",
+      "total_votes_polled": "642000000",
+      "voter_turnout": "66.3%",
+      "registered_voters": "969000000",
+      "total_candidates": 8360,
+      "total_polling_stations": 1052000,
+      "party_results": [
+        { "party": "BJP", "seats": 240, "votes_pct": "36.6%", "color": "#FF6B00" },
+        { "party": "INC", "seats": 99, "votes_pct": "21.2%", "color": "#1E40AF" },
+        { "party": "SP", "seats": 37, "votes_pct": "6.3%", "color": "#DC2626" },
+        { "party": "AITC", "seats": 29, "votes_pct": "4.6%", "color": "#047857" },
+        { "party": "DMK", "seats": 22, "votes_pct": "2.7%", "color": "#7C3AED" },
+        { "party": "TDP", "seats": 16, "votes_pct": "2.3%", "color": "#F59E0B" },
+        { "party": "JDU", "seats": 12, "votes_pct": "1.8%", "color": "#0EA5E9" },
+        { "party": "Others/Ind", "seats": 88, "votes_pct": "24.5%", "color": "#6B7280" }
+      ],
+      "alliance_results": [
+        { "alliance": "NDA (Led by BJP)", "seats": 293 },
+        { "alliance": "INDIA Alliance (Led by INC)", "seats": 234 },
+        { "alliance": "Others/Independents", "seats": 16 }
+      ]
+    },
+    "next_election": "2029",
+    "state_wise_seats": {
+      "UP": 80, "MH": 48, "WB": 42, "TN": 39, "MP": 29, "RJ": 25, "KA": 28, "GJ": 26, "AP": 25,
+      "OR": 21, "JH": 14, "PB": 13, "HR": 10, "UK": 5, "HP": 4, "JK": 6, "CH": 1, "DL": 7,
+      "AS": 14, "NL": 2, "MN": 2, "TR": 2, "AR": 2, "PY": 1, "LD": 2, "AN": 1, "DN": 1
+    }
+  },
+  "rajya_sabha": {
+    "title": "Rajya Sabha (Council of States)",
+    "level": "National",
+    "description": "Upper house of Parliament. 245 seats — 233 elected by State/UT legislatures, 12 nominated by President. Not directly elected by citizens.",
+    "total_seats": 245,
+    "elected_seats": 233,
+    "nominated_seats": 12,
+    "tenure_years": 6,
+    "note": "One-third of members retire every 2 years. No dissolution.",
+    "current_composition": [
+      { "party": "BJP", "seats": 86, "color": "#FF6B00" },
+      { "party": "INC", "seats": 26, "color": "#1E40AF" },
+      { "party": "AAP", "seats": 10, "color": "#047857" },
+      { "party": "AITC", "seats": 12, "color": "#DC2626" },
+      { "party": "JDU", "seats": 4, "color": "#0EA5E9" },
+      { "party": "DMK", "seats": 6, "color": "#7C3AED" },
+      { "party": "SP", "seats": 4, "color": "#DC2626" },
+      { "party": "TDP", "seats": 6, "color": "#F59E0B" },
+      { "party": "Others", "seats": 75, "color": "#6B7280" }
+    ],
+    "recent_bypolls": [
+      { "state": "Uttar Pradesh", "seats": 10, "date": "February 2024" },
+      { "state": "Bihar", "seats": 6, "date": "March 2024" },
+      { "state": "Maharashtra", "seats": 5, "date": "November 2024" },
+      { "state": "Rajasthan", "seats": 4, "date": "July 2024" }
+    ]
+  },
+  "vidhan_sabha": {
+    "title": "Vidhan Sabha (State Legislative Assemblies)",
+    "level": "State",
+    "description": "Lower house of each State Legislature. Directly elected by citizens of the state. 28 states + 2 UTs have their own Vidhan Sabha.",
+    "all_states": [
+      {
+        "state": "Andhra Pradesh", "seats": 175, "last_election": "2024", "next_election": "2029",
+        "ruling": "NTR Congress (Jagan Mohan Reddy)", "governor": "S. Abdul Nazeer"
+      },
+      {
+        "state": "Arunachal Pradesh", "seats": 60, "last_election": "2024", "next_election": "2029",
+        "ruling": "BJP (Pema Khandu)", "governor": "L. K. Singh"
+      },
+      {
+        "state": "Assam", "seats": 126, "last_election": "2025", "next_election": "2031",
+        "ruling": "NDA - BJP+Asom Gana Parishad (Himanta Biswa Sarma)", "governor": "Lakshman Prasad"
+      },
+      {
+        "state": "Bihar", "seats": 243, "last_election": "2020", "next_election": "2025",
+        "ruling": "NDA - BJP+JDU (Nitish Kumar)", "governor": "Rajendra Arlekar"
+      },
+      {
+        "state": "Chhattisgarh", "seats": 90, "last_election": "2023", "next_election": "2028",
+        "ruling": "BJP (Vijay Sharma)", "governor": "Ramendra Kumar"
+      },
+      {
+        "state": "Goa", "seats": 40, "last_election": "2024", "next_election": "2029",
+        "ruling": "BJP (Manohar Ajgaonkar)", "governor": "P. S. Sreedharan Pillai"
+      },
+      {
+        "state": "Gujarat", "seats": 182, "last_election": "2022", "next_election": "2027",
+        "ruling": "BJP (Bhupendra Patel)", "governor": "Acharya Devvrat"
+      },
+      {
+        "state": "Haryana", "seats": 90, "last_election": "2024", "next_election": "2029",
+        "ruling": "BJP (Nayab Singh Saini)", "governor": "Bandaru Dattatraya"
+      },
+      {
+        "state": "Himachal Pradesh", "seats": 68, "last_election": "2022", "next_election": "2027",
+        "ruling": "Congress (Sukhvinder Singh)", "governor": "Shiv Pratap Shukla"
+      },
+      {
+        "state": "Jharkhand", "seats": 81, "last_election": "2024", "next_election": "2029",
+        "ruling": "INDIA Alliance - JMM+Congress (Champai Soren)", "governor": "C. P. Radhakrishnan"
+      },
+      {
+        "state": "Karnataka", "seats": 224, "last_election": "2023", "next_election": "2028",
+        "ruling": "Congress (Siddaramaiah)", "governor": "Thaawarchand Gehlot"
+      },
+      {
+        "state": "Kerala", "seats": 140, "last_election": "2025", "next_election": "2031",
+        "ruling": "LDF - CPI(M) Lead (Pinarayi Vijayan)", "governor": "Rajendra Vishwanath Arlekar"
+      },
+      {
+        "state": "Madhya Pradesh", "seats": 230, "last_election": "2023", "next_election": "2028",
+        "ruling": "BJP (Mohan Yadav)", "governor": "Mangubhai C. Patel"
+      },
+      {
+        "state": "Maharashtra", "seats": 288, "last_election": "2024", "next_election": "2029",
+        "ruling": "Mahayuti - BJP+SS+NCP (Devendra Fadnavis)", "governor": "C. P. Radhakrishnan"
+      },
+      {
+        "state": "Manipur", "seats": 60, "last_election": "2022", "next_election": "2027",
+        "ruling": "BJP (N. Biren Singh)", "governor": "Anusuiya Uikey"
+      },
+      {
+        "state": "Meghalaya", "seats": 60, "last_election": "2023", "next_election": "2028",
+        "ruling": "Congress (Conrad Sangma)", "governor": "Phagu Chauhan"
+      },
+      {
+        "state": "Mizoram", "seats": 40, "last_election": "2023", "next_election": "2028",
+        "ruling": "MNF (Zoramthanga)", "governor": "K. S. K. S. K. Jatua"
+      },
+      {
+        "state": "Nagaland", "seats": 60, "last_election": "2023", "next_election": "2028",
+        "ruling": "NDPP+BJP (Neiphiu Rio)", "governor": "La. Ganesan"
+      },
+      {
+        "state": "Odisha", "seats": 147, "last_election": "2024", "next_election": "2029",
+        "ruling": "BJD (Mohan Charan Majhi)", "governor": "Ranchi"
+      },
+      {
+        "state": "Punjab", "seats": 117, "last_election": "2025", "next_election": "2031",
+        "ruling": "AAP (Bhagwant Mann)", "governor": "Gurmeet Singh"
+      },
+      {
+        "state": "Rajasthan", "seats": 200, "last_election": "2023", "next_election": "2028",
+        "ruling": "Congress (Ashok Gehlot)", "governor": "Haribhushan Kalyanpur"
+      },
+      {
+        "state": "Sikkim", "seats": 32, "last_election": "2024", "next_election": "2029",
+        "ruling": "SKM (Prem Singh Tamang)", "governor": "Shri V. K. Singh"
+      },
+      {
+        "state": "Tamil Nadu", "seats": 234, "last_election": "2025", "next_election": "2031",
+        "ruling": "DMK Alliance - Stalin (M.K. Stalin)", "governor": "R. N. Ravi"
+      },
+      {
+        "state": "Telangana", "seats": 119, "last_election": "2023", "next_election": "2028",
+        "ruling": "Congress (Revanth Reddy)", "governor": "Jishnu Dev Varma"
+      },
+      {
+        "state": "Tripura", "seats": 60, "last_election": "2023", "next_election": "2028",
+        "ruling": "BJP (Manik Saha)", "governor": "S. N. Shrivastava"
+      },
+      {
+        "state": "Uttar Pradesh", "seats": 403, "last_election": "2022", "next_election": "2027",
+        "ruling": "BJP (Yogi Adityanath)", "governor": "Anandiben Patel"
+      },
+      {
+        "state": "Uttarakhand", "seats": 70, "last_election": "2022", "next_election": "2027",
+        "ruling": "BJP (Pushkar Singh Dhami)", "governor": "Gurdeep Singh"
+      },
+      {
+        "state": "West Bengal", "seats": 294, "last_election": "2025", "next_election": "2031",
+        "ruling": "TMC (Mamata Banerjee)", "governor": "C. V. Ananda Bose"
+      }
+    ],
+    "recent_elections": [
+      {
+        "state": "Delhi",
+        "year": 2025,
+        "month": "February",
+        "total_seats": 70,
+        "turnout": "60.4%",
+        "result": [
+          { "party": "AAP", "seats": 62, "color": "#047857" },
+          { "party": "BJP", "seats": 8, "color": "#FF6B00" },
+          { "party": "INC", "seats": 0, "color": "#1E40AF" }
+        ],
+        "govt_formed": "AAP (Absolute Majority - Arvind Kejriwal)"
+      },
+      {
+        "state": "Punjab",
+        "year": 2025,
+        "month": "February",
+        "total_seats": 117,
+        "turnout": "67.8%",
+        "result": [
+          { "party": "AAP", "seats": 92, "color": "#047857" },
+          { "party": "INC", "seats": 18, "color": "#1E40AF" },
+          { "party": "BJP", "seats": 3, "color": "#FF6B00" },
+          { "party": "SAD", "seats": 2, "color": "#F59E0B" },
+          { "party": "Others", "seats": 2, "color": "#6B7280" }
+        ],
+        "govt_formed": "AAP (Majority - Bhagwant Mann)"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2025,
+        "month": "May",
+        "total_seats": 234,
+        "turnout": "73.2%",
+        "result": [
+          { "party": "DMK", "seats": 134, "color": "#7C3AED" },
+          { "party": "AIADMK", "seats": 66, "color": "#0EA5E9" },
+          { "party": "BJP", "seats": 4, "color": "#FF6B00" },
+          { "party": "NTK", "seats": 6, "color": "#DC2626" },
+          { "party": "Others", "seats": 24, "color": "#6B7280" }
+        ],
+        "govt_formed": "DMK Alliance (M.K. Stalin)"
+      },
+      {
+        "state": "Kerala",
+        "year": 2025,
+        "month": "May",
+        "total_seats": 140,
+        "turnout": "77.3%",
+        "result": [
+          { "party": "CPI(M)", "seats": 68, "color": "#DC2626" },
+          { "party": "INC", "seats": 23, "color": "#1E40AF" },
+          { "party": "IUML", "seats": 12, "color": "#7C3AED" },
+          { "party": "BJP", "seats": 5, "color": "#FF6B00" },
+          { "party": "KDMC", "seats": 6, "color": "#F59E0B" },
+          { "party": "Others", "seats": 26, "color": "#6B7280" }
+        ],
+        "govt_formed": "LDF - CPI(M) Lead (Pinarayi Vijayan)"
+      },
+      {
+        "state": "Assam",
+        "year": 2025,
+        "month": "May",
+        "total_seats": 126,
+        "turnout": "79.1%",
+        "result": [
+          { "party": "BJP", "seats": 65, "color": "#FF6B00" },
+          { "party": "AGP", "seats": 9, "color": "#0EA5E9" },
+          { "party": "UPPL", "seats": 6, "color": "#047857" },
+          { "party": "INC", "seats": 25, "color": "#1E40AF" },
+          { "party": "AIUDF", "seats": 14, "color": "#7C3AED" },
+          { "party": "Others", "seats": 7, "color": "#6B7280" }
+        ],
+        "govt_formed": "NDA - BJP+AGP (Himanta Biswa Sarma)"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2025,
+        "month": "May",
+        "total_seats": 294,
+        "turnout": "78.5%",
+        "result": [
+          { "party": "TMC", "seats": 215, "color": "#047857" },
+          { "party": "BJP", "seats": 54, "color": "#FF6B00" },
+          { "party": "INC", "seats": 6, "color": "#1E40AF" },
+          { "party": "CPI(M)", "seats": 3, "color": "#DC2626" },
+          { "party": "Others", "seats": 16, "color": "#6B7280" }
+        ],
+        "govt_formed": "TMC (Mamata Banerjee - 3rd term)"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2024,
+        "month": "November",
+        "total_seats": 288,
+        "turnout": "65.2%",
+        "result": [
+          { "party": "BJP", "seats": 132, "color": "#FF6B00" },
+          { "party": "Shiv Sena (Shinde)", "seats": 57, "color": "#F59E0B" },
+          { "party": "NCP (Ajit)", "seats": 41, "color": "#0EA5E9" },
+          { "party": "INC", "seats": 37, "color": "#1E40AF" },
+          { "party": "SS (Uddhav)", "seats": 15, "color": "#7C3AED" },
+          { "party": "Others", "seats": 6, "color": "#6B7280" }
+        ],
+        "govt_formed": "Mahayuti Alliance (BJP+SS+NCP)"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2024,
+        "month": "November",
+        "total_seats": 81,
+        "turnout": "68.4%",
+        "result": [
+          { "party": "JMM", "seats": 34, "color": "#DC2626" },
+          { "party": "BJP", "seats": 21, "color": "#FF6B00" },
+          { "party": "INC", "seats": 16, "color": "#1E40AF" },
+          { "party": "RJD", "seats": 4, "color": "#7C3AED" },
+          { "party": "Others", "seats": 6, "color": "#6B7280" }
+        ],
+        "govt_formed": "INDIA Alliance (JMM+INC+RJD)"
+      },
+      {
+        "state": "Haryana",
+        "year": 2024,
+        "month": "October",
+        "total_seats": 90,
+        "turnout": "67.9%",
+        "result": [
+          { "party": "BJP", "seats": 48, "color": "#FF6B00" },
+          { "party": "INC", "seats": 37, "color": "#1E40AF" },
+          { "party": "INLD", "seats": 2, "color": "#F59E0B" },
+          { "party": "JJP", "seats": 2, "color": "#0EA5E9" },
+          { "party": "Others", "seats": 1, "color": "#6B7280" }
+        ],
+        "govt_formed": "BJP (Nayab Singh Saini)"
+      },
+      {
+        "state": "Jammu & Kashmir",
+        "year": 2024,
+        "month": "October",
+        "total_seats": 90,
+        "turnout": "64.5%",
+        "result": [
+          { "party": "NC", "seats": 42, "color": "#047857" },
+          { "party": "PDP", "seats": 3, "color": "#7C3AED" },
+          { "party": "BJP", "seats": 29, "color": "#FF6B00" },
+          { "party": "INC", "seats": 6, "color": "#1E40AF" },
+          { "party": "AAP", "seats": 1, "color": "#047857" },
+          { "party": "Others", "seats": 9, "color": "#6B7280" }
+        ],
+        "govt_formed": "NC+Congress (Omar Abdullah)"
+      },
+      {
+        "state": "Odisha",
+        "year": 2024,
+        "month": "May",
+        "total_seats": 147,
+        "turnout": "76.5%",
+        "result": [
+          { "party": "BJD", "seats": 78, "color": "#0EA5E9" },
+          { "party": "BJP", "seats": 51, "color": "#FF6B00" },
+          { "party": "INC", "seats": 14, "color": "#1E40AF" },
+          { "party": "Others", "seats": 4, "color": "#6B7280" }
+        ],
+        "govt_formed": "BJD (Mohan Charan Majhi - New CM)"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2024,
+        "month": "April",
+        "total_seats": 60,
+        "turnout": "78.2%",
+        "result": [
+          { "party": "BJP", "seats": 46, "color": "#FF6B00" },
+          { "party": "INC", "seats": 4, "color": "#1E40AF" },
+          { "party": "NPP", "seats": 5, "color": "#047857" },
+          { "party": "Others", "seats": 5, "color": "#6B7280" }
+        ],
+        "govt_formed": "BJP (Pema Khandu)"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2024,
+        "month": "April",
+        "total_seats": 32,
+        "turnout": "89.1%",
+        "result": [
+          { "party": "SKM", "seats": 31, "color": "#7C3AED" },
+          { "party": "BJP", "seats": 1, "color": "#FF6B00" }
+        ],
+        "govt_formed": "SKM (Prem Singh Tamang - 2nd term)"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2024,
+        "month": "May",
+        "total_seats": 175,
+        "turnout": "78.5%",
+        "result": [
+          { "party": "NTR", "seats": 135, "color": "#DC2626" },
+          { "party": "TDP", "seats": 24, "color": "#F59E0B" },
+          { "party": "JSP", "seats": 3, "color": "#7C3AED" },
+          { "party": "BJP", "seats": 2, "color": "#FF6B00" },
+          { "party": "INC", "seats": 0, "color": "#1E40AF" },
+          { "party": "Others", "seats": 11, "color": "#6B7280" }
+        ],
+        "govt_formed": "NTR Congress (Jagan Mohan Reddy)"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2023,
+        "month": "December",
+        "total_seats": 90,
+        "turnout": "76.8%",
+        "result": [
+          { "party": "BJP", "seats": 54, "color": "#FF6B00" },
+          { "party": "INC", "seats": 35, "color": "#1E40AF" },
+          { "party": "Others", "seats": 1, "color": "#6B7280" }
+        ],
+        "govt_formed": "BJP (Mohan Yadav - New CM)"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2023,
+        "month": "December",
+        "total_seats": 230,
+        "turnout": "77.2%",
+        "result": [
+          { "party": "BJP", "seats": 163, "color": "#FF6B00" },
+          { "party": "INC", "seats": 66, "color": "#1E40AF" },
+          { "party": "Others", "seats": 1, "color": "#6B7280" }
+        ],
+        "govt_formed": "BJP (Mohan Yadav)"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2023,
+        "month": "December",
+        "total_seats": 200,
+        "turnout": "74.5%",
+        "result": [
+          { "party": "INC", "seats": 125, "color": "#1E40AF" },
+          { "party": "BJP", "seats": 72, "color": "#FF6B00" },
+          { "party": "BSP", "seats": 2, "color": "#7C3AED" },
+          { "party": "Others", "seats": 1, "color": "#6B7280" }
+        ],
+        "govt_formed": "Congress (Ashok Gehlot)"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2023,
+        "month": "May",
+        "total_seats": 224,
+        "turnout": "73.8%",
+        "result": [
+          { "party": "INC", "seats": 135, "color": "#1E40AF" },
+          { "party": "BJP", "seats": 66, "color": "#FF6B00" },
+          { "party": "JD(S)", "seats": 19, "color": "#F59E0B" },
+          { "party": "Others", "seats": 4, "color": "#6B7280" }
+        ],
+        "govt_formed": "Congress (Siddaramaiah)"
+      },
+      {
+        "state": "Telangana",
+        "year": 2023,
+        "month": "December",
+        "total_seats": 119,
+        "turnout": "73.2%",
+        "result": [
+          { "party": "INC", "seats": 64, "color": "#1E40AF" },
+          { "party": "BRS", "seats": 40, "color": "#7C3AED" },
+          { "party": "BJP", "seats": 8, "color": "#FF6B00" },
+          { "party": "CPI", "seats": 2, "color": "#DC2626" },
+          { "party": "Others", "seats": 5, "color": "#6B7280" }
+        ],
+        "govt_formed": "Congress (Revanth Reddy)"
+      },
+      {
+        "state": "Tripura",
+        "year": 2023,
+        "month": "February",
+        "total_seats": 60,
+        "turnout": "89.5%",
+        "result": [
+          { "party": "BJP", "seats": 32, "color": "#FF6B00" },
+          { "party": "CPI(M)", "seats": 11, "color": "#DC2626" },
+          { "party": "INC", "seats": 3, "color": "#1E40AF" },
+          { "party": "IPFT", "seats": 9, "color": "#0EA5E9" },
+          { "party": "Others", "seats": 5, "color": "#6B7280" }
+        ],
+        "govt_formed": "BJP (Manik Saha)"
+      }
+    ]
+  },
+  "vidhan_parishad": {
+    "title": "Vidhan Parishad (State Legislative Councils)",
+    "level": "State (Upper House)",
+    "description": "Upper house of state legislature. Only 6 states have it: UP, Bihar, Maharashtra, Karnataka, Andhra Pradesh, Telangana.",
+    "states_with_parishad": [
+      { "state": "Uttar Pradesh", "seats": 100, "current_ruling": "BJP" },
+      { "state": "Bihar", "seats": 75, "current_ruling": "NDA" },
+      { "state": "Maharashtra", "seats": 78, "current_ruling": "BJP+SS+NCP" },
+      { "state": "Karnataka", "seats": 75, "current_ruling": "Congress" },
+      { "state": "Andhra Pradesh", "seats": 58, "current_ruling": "NTR Congress" },
+      { "state": "Telangana", "seats": 40, "current_ruling": "Congress" }
+    ],
+    "election_method": "Mixed — 1/3 elected by MLAs, 1/3 by local bodies, 1/12 by teachers, 1/12 by graduates, 1/6 nominated by Governor"
+  },
+  "municipal": {
+    "title": "Urban Local Bodies (ULBs)",
+    "level": "City / Urban",
+    "description": "City-level governance — Municipal Corporations, Municipalities, Town Panchayats. Elected directly by urban citizens.",
+    "types": [
+      {
+        "type": "Municipal Corporation (Nagar Nigam)",
+        "for": "Cities with population > 1 Lakh",
+        "examples": "Delhi MCD, BBMP Bengaluru, BMC Mumbai",
+        "tenure": "5 years"
+      },
+      {
+        "type": "Municipal Council (Nagar Palika Parishad)",
+        "for": "Towns with population 25,000–1 Lakh",
+        "tenure": "5 years"
+      },
+      {
+        "type": "Town Panchayat (Nagar Panchayat)",
+        "for": "Transitional areas between rural and urban",
+        "tenure": "5 years"
+      }
+    ],
+    "major_corporations": [
+      { "city": "Delhi MCD", "seats": 250, "last_election": "2022", "ruling": "AAP", "seats_won": 134 },
+      { "city": "BMC Mumbai", "seats": 227, "last_election": "2022", "ruling": "Shiv Sena", "seats_won": 84 },
+      { "city": "BBMP Bengaluru", "seats": 198, "last_election": "2023", "ruling": "BJP", "seats_won": 101 },
+      { "city": "Chennai Corporation", "seats": 200, "last_election": "2022", "ruling": "DMK", "seats_won": 155 },
+      { "city": "Hyderabad GHMC", "seats": 150, "last_election": "2020", "ruling": "BRS", "seats_won": 52 },
+      { "city": "Kolkata KMC", "seats": 141, "last_election": "2021", "ruling": "TMC", "seats_won": 128 },
+      { "city": "Ahmedabad MC", "seats": 192, "last_election": "2021", "ruling": "BJP", "seats_won": 147 },
+      { "city": "Pune PMC", "seats": 162, "last_election": "2022", "ruling": "BJP", "seats_won": 72 }
+    ]
+  },
+  "panchayat": {
+    "title": "Gram Panchayat (Village Council)",
+    "level": "Village / Rural (Grassroots)",
+    "description": "The fundamental unit of democratic governance in India. Over 2.5 lakh Gram Panchayats serve ~70% of India's population.",
+    "statistics": {
+      "total_gram_panchayats": 256535,
+      "total_panchayat_samitis": 6925,
+      "total_zila_parishads": 662,
+      "elected_representatives": 3200000,
+      "women_representatives_pct": "46%"
+    },
+    "three_tier_structure": [
+      {
+        "tier": "Gram Panchayat (Village Level)",
+        "head": "Sarpanch / Gram Pradhan",
+        "elected_by": "Direct election by village voters (18+)",
+        "tenure": "5 years",
+        "functions": ["Local roads & drains", "Public health & sanitation", "Primary education support", "MGNREGA implementation", "Drinking water"]
+      },
+      {
+        "tier": "Panchayat Samiti (Block Level)",
+        "head": "Block Pramukh / BDC Chairperson",
+        "elected_by": "Elected by Gram Panchayat members",
+        "tenure": "5 years",
+        "functions": ["Block-level development works", "Secondary education", "Agriculture extension", "Supervise Gram Panchayats"]
+      },
+      {
+        "tier": "Zila Parishad (District Level)",
+        "head": "Adhyaksha / District Chairperson",
+        "elected_by": "Direct election by district voters",
+        "tenure": "5 years",
+        "functions": ["District-level planning", "Secondary education supervision", "Coordinate block-level bodies", "District infrastructure"]
+      }
+    ],
+    "state_elections": [
+      { "state": "Uttar Pradesh", "year": 2021, "gram_panchayats": 58189, "turnout": "71.7%" },
+      { "state": "Bihar", "year": 2021, "gram_panchayats": 8386, "turnout": "74.8%" },
+      { "state": "West Bengal", "year": 2023, "gram_panchayats": 3317, "turnout": "75.3%" },
+      { "state": "Karnataka", "year": 2020, "gram_panchayats": 5865, "turnout": "80.1%" },
+      { "state": "Rajasthan", "year": 2020, "gram_panchayats": 11341, "turnout": "76.4%" },
+      { "state": "Tamil Nadu", "year": 2022, "gram_panchayats": 12525, "turnout": "78.2%" },
+      { "state": "Maharashtra", "year": 2021, "gram_panchayats": 14288, "turnout": "79.5%" },
+      { "state": "Gujarat", "year": 2021, "gram_panchayats": 14321, "turnout": "72.3%" },
+      { "state": "Madhya Pradesh", "year": 2022, "gram_panchayats": 23000, "turnout": "68.5%" },
+      { "state": "Punjab", "year": 2023, "gram_panchayats": 13269, "turnout": "80.2%" }
+    ]
+  },
+  "election_calendar_2025_26": [
+    { "election": "Bihar Vidhan Sabha", "level": "State Assembly", "seats": 243, "expected": "October 2025", "status": "upcoming", "note": "NDA vs INDIA alliance" },
+    { "election": "Delhi Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 70, "actual": "Feb 2025", "result": "AAP won 62 seats", "status": "completed" },
+    { "election": "Punjab Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 117, "actual": "Feb 2025", "result": "AAP won 92 seats", "status": "completed" },
+    { "election": "Tamil Nadu Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 234, "actual": "May 2025", "result": "DMK won 134 seats", "status": "completed" },
+    { "election": "Kerala Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 140, "actual": "May 2025", "result": "LDF (CPI-M) won 68 seats", "status": "completed" },
+    { "election": "Assam Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 126, "actual": "May 2025", "result": "BJP+ won 74 seats", "status": "completed" },
+    { "election": "West Bengal Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 294, "actual": "May 2025", "result": "TMC won 215 seats", "status": "completed" },
+    { "election": "Jharkhand Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 81, "actual": "Nov 2024", "result": "JMM+ won 47 seats", "status": "completed" },
+    { "election": "Maharashtra Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 288, "actual": "Nov 2024", "result": "BJP+ won 230 seats", "status": "completed" },
+    { "election": "Haryana Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 90, "actual": "Oct 2024", "result": "BJP won 48 seats", "status": "completed" },
+    { "election": "Odisha Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 147, "actual": "May 2024", "result": "BJD won 78 seats", "status": "completed" },
+    { "election": "Andhra Pradesh Vidhan Sabha (Completed)", "level": "State Assembly", "seats": 175, "actual": "May 2024", "result": "NTR Congress won 135 seats", "status": "completed" },
+    { "election": "Jammu & Kashmir Vidhan Sabha (Completed)", "level": "UT Assembly", "seats": 90, "actual": "Oct 2024", "result": "NC+Congress won 48 seats", "status": "completed" },
+    { "election": "Lok Sabha 2029", "level": "National", "seats": 543, "expected": "April-June 2029", "status": "upcoming" }
+  ],
+  "party_alliances": {
+    "nda": {
+      "name": "National Democratic Alliance",
+      "leader": "Narendra Modi (BJP)",
+      "partners": ["BJP", "TDP", "JDU", "LJP(RV)", "AIADMK", "AGP", "NCP", "Shiv Sena", "SAD"]
+    },
+    "india_bloc": {
+      "name": "INDIA Alliance",
+      "leader": "Rahul Gandhi (INC)",
+      "partners": ["INC", "TMC", "DMK", "SP", "RJD", "JMM", "AAP", "NCP (Sharad)", "Shiv Sena (Uddhav)", "CPI(M)", "CPI", "IUML"]
+    },
+    "nda_2025_states": {
+      "Maharashtra": "BJP+SS+NCP = 230/288",
+      "Assam": "BJP+AGP+UPPL = 80/126",
+      "Haryana": "BJP = 48/90",
+      "Arunachal": "BJP = 46/60",
+      "Sikkim": "SKM = 31/32"
+    },
+    "india_2025_states": {
+      "Delhi": "AAP = 62/70",
+      "Punjab": "AAP = 92/117",
+      "Tamil Nadu": "DMK = 134/234",
+      "Kerala": "LDF = 91/140",
+      "West Bengal": "TMC = 215/294",
+      "Jharkhand": "JMM+INC = 50/81"
+    }
+  },
+  "election_commission": {
+    "name": "Election Commission of India",
+    "website": "https://eci.gov.in",
+    "ceo_website": "https://ceotephrases.nic.in",
+    "voter_helpline": "1950",
+    "ciso": "National Voter Service Portal - https://nvsp.in",
+    "current_ce": "Gyanesh Kumar (Since Feb 2025)",
+    "current_ecs": "Sukul Janak and Vivek Joshi"
+  }
+}

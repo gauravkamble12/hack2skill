@@ -1,0 +1,34 @@
+# Root .gitignore for Matdata Mitra (Monorepo)
+
+# Dependencies
+**/node_modules/
+**/dist/
+**/.next/
+**/out/
+**/build/
+
+# Environment Variables
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.pem
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Next.js specific
+frontend/next-env.d.ts
+frontend/.next/

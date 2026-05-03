@@ -1,0 +1,233 @@
+{
+  "lok_sabha": {
+    "title": "Lok Sabha (House of the People)",
+    "level": "National",
+    "description": "Lower house of Parliament. 543 directly elected seats. Elections every 5 years.",
+    "total_seats": 543,
+    "tenure_years": 5,
+    "last_election": {
+      "year": 2024,
+      "phase": 7,
+      "dates": ["April 19", "April 26", "May 7", "May 13", "May 20", "May 25", "June 1"],
+      "result_date": "June 4, 2024",
+      "total_votes_polled": "642000000",
+      "voter_turnout": "66.3%",
+      "registered_voters": "969000000",
+      "total_candidates": 8360,
+      "total_polling_stations": 1052000,
+      "party_results": [
+        { "party": "BJP", "seats": 240, "votes_pct": "36.6%", "color": "#FF6B00" },
+        { "party": "INC", "seats": 99, "votes_pct": "21.2%", "color": "#1E40AF" },
+        { "party": "SP", "seats": 37, "votes_pct": "6.3%", "color": "#DC2626" },
+        { "party": "AITC", "seats": 29, "votes_pct": "4.6%", "color": "#047857" },
+        { "party": "DMK", "seats": 22, "votes_pct": "2.7%", "color": "#7C3AED" },
+        { "party": "TDP", "seats": 16, "votes_pct": "2.3%", "color": "#F59E0B" },
+        { "party": "JDU", "seats": 12, "votes_pct": "1.8%", "color": "#0EA5E9" },
+        { "party": "Others/Ind", "seats": 88, "votes_pct": "24.5%", "color": "#6B7280" }
+      ],
+      "alliance_results": [
+        { "alliance": "NDA (Led by BJP)", "seats": 293 },
+        { "alliance": "INDIA Alliance (Led by INC)", "seats": 234 },
+        { "alliance": "Others/Independents", "seats": 16 }
+      ]
+    },
+    "next_election": "2029"
+  },
+  "rajya_sabha": {
+    "title": "Rajya Sabha (Council of States)",
+    "level": "National",
+    "description": "Upper house of Parliament. 245 seats — 233 elected by State/UT legislatures, 12 nominated by President. Not directly elected by citizens.",
+    "total_seats": 245,
+    "elected_seats": 233,
+    "nominated_seats": 12,
+    "tenure_years": 6,
+    "note": "One-third of members retire every 2 years. No dissolution.",
+    "current_composition": [
+      { "party": "BJP", "seats": 86, "color": "#FF6B00" },
+      { "party": "INC", "seats": 26, "color": "#1E40AF" },
+      { "party": "AAP", "seats": 10, "color": "#047857" },
+      { "party": "AITC", "seats": 12, "color": "#DC2626" },
+      { "party": "JDU", "seats": 4, "color": "#0EA5E9" },
+      { "party": "Others", "seats": 107, "color": "#6B7280" }
+    ],
+    "recent_bypolls": [
+      { "state": "Uttar Pradesh", "seats": 10, "date": "February 2024" },
+      { "state": "Bihar", "seats": 6, "date": "March 2024" }
+    ]
+  },
+  "vidhan_sabha": {
+    "title": "Vidhan Sabha (State Legislative Assemblies)",
+    "level": "State",
+    "description": "Lower house of each State Legislature. Directly elected by citizens of the state. 28 states + 2 UTs have their own Vidhan Sabha.",
+    "recent_elections": [
+      {
+        "state": "Maharashtra",
+        "year": 2024,
+        "month": "November",
+        "total_seats": 288,
+        "turnout": "65.2%",
+        "result": [
+          { "party": "BJP", "seats": 132, "color": "#FF6B00" },
+          { "party": "Shiv Sena (Shinde)", "seats": 57, "color": "#F59E0B" },
+          { "party": "NCP (Ajit)", "seats": 41, "color": "#0EA5E9" },
+          { "party": "INC", "seats": 37, "color": "#1E40AF" },
+          { "party": "Others", "seats": 21, "color": "#6B7280" }
+        ],
+        "govt_formed": "Mahayuti Alliance (BJP+SS+NCP)"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2024,
+        "month": "November",
+        "total_seats": 81,
+        "turnout": "68.4%",
+        "result": [
+          { "party": "JMM", "seats": 34, "color": "#DC2626" },
+          { "party": "INC", "seats": 16, "color": "#1E40AF" },
+          { "party": "RJD", "seats": 4, "color": "#7C3AED" },
+          { "party": "BJP", "seats": 21, "color": "#FF6B00" },
+          { "party": "Others", "seats": 6, "color": "#6B7280" }
+        ],
+        "govt_formed": "INDIA Alliance (JMM+INC+RJD)"
+      },
+      {
+        "state": "Haryana",
+        "year": 2024,
+        "month": "October",
+        "total_seats": 90,
+        "turnout": "67.9%",
+        "result": [
+          { "party": "BJP", "seats": 48, "color": "#FF6B00" },
+          { "party": "INC", "seats": 37, "color": "#1E40AF" },
+          { "party": "INLD", "seats": 2, "color": "#F59E0B" },
+          { "party": "Others/Ind", "seats": 3, "color": "#6B7280" }
+        ],
+        "govt_formed": "BJP (Majority)"
+      },
+      {
+        "state": "Delhi",
+        "year": 2025,
+        "month": "February",
+        "total_seats": 70,
+        "turnout": "60.4%",
+        "result": [
+          { "party": "BJP", "seats": 48, "color": "#FF6B00" },
+          { "party": "AAP", "seats": 22, "color": "#047857" },
+          { "party": "INC", "seats": 0, "color": "#1E40AF" }
+        ],
+        "govt_formed": "BJP (Majority)"
+      },
+      {
+        "state": "Bihar",
+        "year": 2020,
+        "month": "November",
+        "total_seats": 243,
+        "turnout": "57.3%",
+        "result": [
+          { "party": "BJP", "seats": 74, "color": "#FF6B00" },
+          { "party": "JDU", "seats": 43, "color": "#0EA5E9" },
+          { "party": "RJD", "seats": 75, "color": "#DC2626" },
+          { "party": "INC", "seats": 19, "color": "#1E40AF" },
+          { "party": "Others", "seats": 32, "color": "#6B7280" }
+        ],
+        "govt_formed": "NDA (BJP+JDU)",
+        "next_election_year": 2025
+      }
+    ]
+  },
+  "vidhan_parishad": {
+    "title": "Vidhan Parishad (State Legislative Councils)",
+    "level": "State (Upper House)",
+    "description": "Upper house of state legislature. Only 6 states have it: UP, Bihar, Maharashtra, Karnataka, Andhra Pradesh, Telangana.",
+    "states_with_parishad": [
+      { "state": "Uttar Pradesh", "seats": 100 },
+      { "state": "Bihar", "seats": 75 },
+      { "state": "Maharashtra", "seats": 78 },
+      { "state": "Karnataka", "seats": 75 },
+      { "state": "Andhra Pradesh", "seats": 58 },
+      { "state": "Telangana", "seats": 40 }
+    ],
+    "election_method": "Mixed — 1/3 elected by MLAs, 1/3 by local bodies, 1/12 by teachers, 1/12 by graduates, 1/6 nominated by Governor"
+  },
+  "municipal": {
+    "title": "Urban Local Bodies (ULBs)",
+    "level": "City / Urban",
+    "description": "City-level governance — Municipal Corporations, Municipalities, Town Panchayats. Elected directly by urban citizens.",
+    "types": [
+      {
+        "type": "Municipal Corporation (Nagar Nigam)",
+        "for": "Cities with population > 1 Lakh",
+        "examples": "Delhi MCD, BBMP Bengaluru, BMC Mumbai",
+        "tenure": "5 years"
+      },
+      {
+        "type": "Municipal Council (Nagar Palika Parishad)",
+        "for": "Towns with population 25,000–1 Lakh",
+        "tenure": "5 years"
+      },
+      {
+        "type": "Town Panchayat (Nagar Panchayat)",
+        "for": "Transitional areas between rural and urban",
+        "tenure": "5 years"
+      }
+    ],
+    "recent_elections": [
+      { "city": "Delhi MCD", "year": 2022, "month": "December", "winner": "AAP", "seats_won": 134, "total_seats": 250 },
+      { "city": "Pune Municipal Corporation", "year": 2022, "month": "Deferred to 2024", "winner": "Pending", "seats_won": 0, "total_seats": 162 },
+      { "city": "Greater Mumbai (BMC)", "year": 2022, "month": "Deferred — Court Order", "winner": "Pending", "seats_won": 0, "total_seats": 227 }
+    ]
+  },
+  "panchayat": {
+    "title": "Gram Panchayat (Village Council)",
+    "level": "Village / Rural (Grassroots)",
+    "description": "The fundamental unit of democratic governance in India. Over 2.5 lakh Gram Panchayats serve ~70% of India's population.",
+    "statistics": {
+      "total_gram_panchayats": 256535,
+      "total_panchayat_samitis": 6925,
+      "total_zila_parishads": 662,
+      "elected_representatives": 3200000,
+      "women_representatives_pct": "46%"
+    },
+    "three_tier_structure": [
+      {
+        "tier": "Gram Panchayat (Village Level)",
+        "head": "Sarpanch / Gram Pradhan",
+        "elected_by": "Direct election by village voters (18+)",
+        "tenure": "5 years",
+        "functions": ["Local roads & drains", "Public health & sanitation", "Primary education support", "MGNREGA implementation", "Drinking water"]
+      },
+      {
+        "tier": "Panchayat Samiti (Block Level)",
+        "head": "Block Pramukh / BDC Chairperson",
+        "elected_by": "Elected by Gram Panchayat members",
+        "tenure": "5 years",
+        "functions": ["Block-level development works", "Secondary education", "Agriculture extension", "Supervise Gram Panchayats"]
+      },
+      {
+        "tier": "Zila Parishad (District Level)",
+        "head": "Adhyaksha / District Chairperson",
+        "elected_by": "Direct election by district voters",
+        "tenure": "5 years",
+        "functions": ["District-level planning", "Secondary education supervision", "Coordinate block-level bodies", "District infrastructure"]
+      }
+    ],
+    "recent_state_panchayat_elections": [
+      { "state": "Uttar Pradesh", "year": 2021, "month": "April", "gram_panchayats": 58189, "turnout": "71.7%" },
+      { "state": "Bihar", "year": 2021, "month": "September-December", "gram_panchayats": 8386, "turnout": "74.8%" },
+      { "state": "West Bengal", "year": 2023, "month": "July", "gram_panchayats": 3317, "turnout": "75.3%" },
+      { "state": "Karnataka", "year": 2020, "month": "February", "gram_panchayats": 5865, "turnout": "80.1%" },
+      { "state": "Rajasthan", "year": 2020, "month": "January-February", "gram_panchayats": 11341, "turnout": "76.4%" },
+      { "state": "Tamil Nadu", "year": 2022, "month": "October", "gram_panchayats": 12525, "turnout": "78.2%" },
+      { "state": "Maharashtra", "year": 2021, "month": "January-February", "gram_panchayats": 14288, "turnout": "79.5%" }
+    ]
+  },
+  "election_calendar_2025_26": [
+    { "election": "Bihar Vidhan Sabha", "level": "State Assembly", "expected": "October 2025", "seats": 243, "status": "upcoming" },
+    { "election": "West Bengal Vidhan Sabha", "level": "State Assembly", "expected": "April 2026", "seats": 294, "status": "upcoming" },
+    { "election": "Tamil Nadu Vidhan Sabha", "level": "State Assembly", "expected": "May 2026", "seats": 234, "status": "upcoming" },
+    { "election": "Assam Vidhan Sabha", "level": "State Assembly", "expected": "April 2026", "seats": 126, "status": "upcoming" },
+    { "election": "Kerala Vidhan Sabha", "level": "State Assembly", "expected": "April 2026", "seats": 140, "status": "upcoming" },
+    { "election": "Pondicherry Vidhan Sabha", "level": "UT Assembly", "expected": "May 2026", "seats": 30, "status": "upcoming" },
+    { "election": "UP Panchayat Elections", "level": "Village (Panchayat)", "expected": "2026", "seats": 58189, "status": "upcoming" }
+  ]
+}
