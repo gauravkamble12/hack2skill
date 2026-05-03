@@ -201,6 +201,33 @@ export default function BoothMap({ lat, lng }: BoothMapProps) {
                 {booth.distance_km} km
               </div>
             </div>
+            
+            {selectedBooth?.id === booth.id && (
+              <div style={{ marginTop: "1rem", borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "0.75rem" }}>
+                <a 
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${booth.lat},${booth.lng}&travelmode=walking`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ 
+                    display: "flex", 
+                    alignItems: "center", 
+                    justifyContent: "center", 
+                    gap: "0.5rem", 
+                    width: "100%", 
+                    background: "#4285F4", 
+                    color: "white", 
+                    border: "none", 
+                    borderRadius: "8px", 
+                    padding: "0.5rem", 
+                    fontSize: "0.8rem", 
+                    fontWeight: 600, 
+                    textDecoration: "none"
+                  }}
+                >
+                  🌐 Navigate with Google Maps
+                </a>
+              </div>
+            )}
           </div>
         ))}
 

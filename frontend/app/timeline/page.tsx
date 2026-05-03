@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { Calendar } from "lucide-react";
 
 const elections = [
   { id: "lok-sabha-2024", type: "Lok Sabha", label: "18th Lok Sabha General Election", year: 2024, phases: 7, voting: "Apr 19 – Jun 1, 2024", result: "Jun 4, 2024", status: "completed", seats: 543, turnout: "66.14%", color: "#6366f1" },
@@ -28,6 +29,15 @@ function Countdown({ targetDate }: { targetDate: string }) {
       ))}
     </div>
   );
+}
+
+function getGoogleCalendarLink(e: any) {
+  const title = encodeURIComponent(e.label);
+  const details = encodeURIComponent(`Don't forget to vote in the ${e.label}. Your vote is your voice! Location: ${e.state || "India"}`);
+  // Simplified date handling for demo
+  const startDate = e.id === "bihar-2025" ? "20251018" : "20290415";
+  const endDate = e.id === "bihar-2025" ? "20251018" : "20290415";
+  return `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${encodeURIComponent(e.state || "India")}`;
 }
 
 export default function TimelinePage() {
@@ -73,7 +83,31 @@ export default function TimelinePage() {
                     </div>
                   ))}
                 </div>
-                {e.status === "upcoming" && <Countdown targetDate={e.id === "bihar-2025" ? "2025-10-18" : "2029-04-15"} />}
+                {e.status === "upcoming" && (
+                  <div style={{ marginTop: "1rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+                    <Countdown targetDate={e.id === "bihar-2025" ? "2025-10-18" : "2029-04-15"} />
+                    <a 
+                      href={getGoogleCalendarLink(e)} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="btn"
+                      style={{ 
+                        width: "fit-content", 
+                        background: "rgba(19,136,8,0.1)", 
+                        border: "1px solid rgba(19,136,8,0.3)", 
+                        color: "#4ade80",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                        padding: "0.5rem 1rem",
+                        fontSize: "0.82rem",
+                        textDecoration: "none"
+                      }}
+                    >
+                      <Calendar size={16} /> Remind me on Google Calendar
+                    </a>
+                  </div>
+                )}
                 {e.turnout && <p style={{ marginTop: "0.75rem", fontSize: "0.82rem", color: "#8896B3" }}>📈 Voter Turnout: <strong style={{ color: "#4ade80" }}>{e.turnout}</strong></p>}
               </div>
             </div>
