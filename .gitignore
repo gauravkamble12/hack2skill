@@ -32,3 +32,5 @@ Thumbs.db
 # Next.js specific
 frontend/next-env.d.ts
 frontend/.next/
+
+.vercel

@@ -7,7 +7,7 @@ interface IndiaMapProps {
   selectedState: string;
 }
 
-const geoUrl = "/india-states.json";
+const geoUrl = "https://raw.githubusercontent.com/HindustanTimesLabs/indiamaps/master/state_2019/india_state.json";
 
 export default function IndiaMap({ onSelectState, selectedState }: IndiaMapProps) {
   const [geoData, setGeoData] = useState<Record<string, unknown> | null>(null);
