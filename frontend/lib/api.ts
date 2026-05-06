@@ -1,15 +1,29 @@
 const getApiBaseUrl = (): string => {
+  // 1. Prioritize environment variable
   if (process.env.NEXT_PUBLIC_API_URL) {
     return process.env.NEXT_PUBLIC_API_URL;
   }
 
+  // 2. Local development fallback
   if (typeof window === 'undefined') {
     return 'http://localhost:5000';
   }
 
-  return window.location.hostname === 'localhost' 
-    ? 'http://localhost:5000' 
-    : `https://${window.location.hostname.replace('frontend', 'backend')}`;
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return 'http://localhost:5000';
+  }
+
+  // 3. Vercel production fallback: Replace frontend subdomain with backend subdomain
+  // Example: matdata-mitra-frontend.vercel.app -> matdata-mitra-backend.vercel.app
+  if (window.location.hostname.includes('vercel.app')) {
+    if (window.location.hostname.includes('frontend')) {
+      return `https://${window.location.hostname.replace('frontend', 'backend')}`;
+    }
+    // Hardcoded fallback for this specific project if env var is missing
+    return 'https://backend-zeta-gilt-i7moh0tq0f.vercel.app';
+  }
+
+  return 'http://localhost:5000';
 };
 
 export const API_BASE_URL = getApiBaseUrl();

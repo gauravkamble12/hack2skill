@@ -4,12 +4,16 @@ const path = require("path");
 let serviceAccount;
 
 if (process.env.FIREBASE_SERVICE_ACCOUNT) {
-  serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+  try {
+    serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+  } catch (e) {
+    console.error("Invalid FIREBASE_SERVICE_ACCOUNT JSON", e);
+  }
 } else {
   try {
     serviceAccount = require(path.join(__dirname, "../serviceAccountKey.json"));
   } catch (e) {
-    console.error("Service account key not found. Please set FIREBASE_SERVICE_ACCOUNT env var.");
+    console.warn("⚠️ serviceAccountKey.json not found and FIREBASE_SERVICE_ACCOUNT not set.");
   }
 }
 
