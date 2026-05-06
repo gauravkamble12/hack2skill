@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
-const xss = require('xss-clean');
 const hpp = require('hpp');
 require('dotenv').config();
 
@@ -20,7 +19,6 @@ const PORT = process.env.PORT || 5000;
 
 // Security & Basic Middleware
 app.use(helmet());
-app.use(xss());
 app.use(hpp());
 // Global CORS
 app.use(cors({
@@ -86,11 +84,16 @@ app.use((err, req, res, next) => {
   });
 });
 
-if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV !== 'test' && !process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`✅ Matdata Mitra backend running at http://localhost:${PORT}`);
     startWatcher();
   });
+} else if (process.env.VERCEL) {
+  // On Vercel, we still need to initialize the watcher if possible, 
+  // but serverless functions are short-lived. 
+  // For now, we skip startWatcher() to avoid startup overhead.
+  console.log("☁️ Vercel deployment detected. Express app exported.");
 }
 
 module.exports = app;

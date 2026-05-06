@@ -15,11 +15,20 @@ class DynamicDataLoader {
   loadAllExternalData() {
     try {
       if (!fs.existsSync(EXTERNAL_DATA_DIR)) {
-        fs.mkdirSync(EXTERNAL_DATA_DIR, { recursive: true });
-        this.createSampleFiles();
+        try {
+          fs.mkdirSync(EXTERNAL_DATA_DIR, { recursive: true });
+          this.createSampleFiles();
+        } catch (e) {
+          console.warn("⚠️ Could not create external data directory (read-only system).");
+        }
       }
 
-      const files = fs.readdirSync(EXTERNAL_DATA_DIR);
+      let files = [];
+      try {
+        files = fs.readdirSync(EXTERNAL_DATA_DIR);
+      } catch (e) {
+        console.warn("⚠️ Could not read external data directory. Skipping external data load.");
+      }
       
       files.forEach(file => {
         if (file.endsWith('.json')) {
