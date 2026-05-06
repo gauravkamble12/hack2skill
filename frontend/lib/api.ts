@@ -20,7 +20,7 @@ const getApiBaseUrl = (): string => {
       return `https://${window.location.hostname.replace('frontend', 'backend')}`;
     }
     // Hardcoded fallback for this specific project if env var is missing
-    return 'https://backend-zeta-gilt-i7moh0tq0f.vercel.app';
+    return 'https://matdata-mitra-india-api.vercel.app';
   }
 
   return 'http://localhost:5000';
