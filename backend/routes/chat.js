@@ -14,9 +14,17 @@ const aiLimiter = rateLimit({
   message: { error: 'AI request limit reached. Please wait a moment and try again.' }
 });
 
-// Load FAQ knowledge base
 const faqsPath = path.join(__dirname, '../data/faqs.json');
-let faqs = JSON.parse(fs.readFileSync(faqsPath, 'utf8'));
+let faqs = { faqs: [], hindi_faqs: [] };
+try {
+  if (fs.existsSync(faqsPath)) {
+    faqs = JSON.parse(fs.readFileSync(faqsPath, 'utf8'));
+  } else {
+    console.warn("⚠️ faqs.json not found at", faqsPath);
+  }
+} catch (e) {
+  console.error("❌ Failed to load or parse faqs.json:", e);
+}
 
 // ─── CACHE: Store AI responses to avoid duplicate API calls ───
 const responseCache = new Map();
