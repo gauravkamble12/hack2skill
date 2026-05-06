@@ -12,10 +12,11 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase safely (prevent crash if config is missing during build)
+// Initialize Firebase safely (prevent crash if config is missing or empty during build)
+const isConfigValid = firebaseConfig.apiKey && firebaseConfig.apiKey !== "undefined" && firebaseConfig.apiKey !== "";
 const app = getApps().length > 0 
   ? getApp() 
-  : (firebaseConfig.apiKey ? initializeApp(firebaseConfig) : null);
+  : (isConfigValid ? initializeApp(firebaseConfig) : null);
 
 const auth = app ? getAuth(app) : null;
 const db = app ? getFirestore(app) : null;
